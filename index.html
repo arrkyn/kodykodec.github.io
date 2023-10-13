@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>fixed_square_test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel='stylesheet' type='text/css' media='screen' href='styles-1.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='mediaqueries.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='backgroundinfinityscroll.css'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='backgroundinfinityscroll.css'> -->
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="frame-wrapper"> 
+        
+       
+
+ 
+<div class="dot-center"></div>
+  
+
+ <div class="nav-container">   
+    <div class="nav-item" id="about">about</div>
+    <nav class="nav-item" id="portfolio">portfolio</nav>
+    <nav class="nav-item" id="contact">contact</nav>
+    </div>
+
+    <div class="fixed-frame"> 
+  
+     <div class="lines">  
+   
+    <div class="line-top-left"> </div>
+    <div class="line-top-right"> </div>
+    <div class="line-left-vert"> </div>
+    <div class="line-right-vert"> </div>
+    <div class="line-bottom-left-about"> </div>
+    <div class="line-bottom-left-portfolio"> </div>
+    <div class="line-bottom-right-contact"> </div>
+    <div class="line-bottom-right-free"> </div>
+        </div>  
+
+
+    <div class="new-window-about" id="aboutWindow">
+        <div class="content-about">
+            <div class="links">Follow me on: <a href="My LinkedIn">LinkedIn</a> </div>
+            <br>
+          <!-- Content of the about window -->
+          <span><strong>MY NAME</strong></span> ipsum dolor sit amet consectetur adipisicing elit. Maxime beatae asperiores, recusandae ratione quas sed voluptate soluta est perspiciatis mollitia libero sapiente illum sequi quidem quo unde nam quaerat repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ab debitis aliquam doloremque voluptas, soluta et cupiditate fugit dolorem mollitia expedita optio repudiandae enim velit iusto. Nostrum soluta esse non. <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus repudiandae consequatur quis quae fugit excepturi quisquam veniam aliquam maiores vitae porro id vero, saepe blanditiis quasi reiciendis reprehenderit labore tenetur?
+          </p><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui esse ex aliquam dolor, voluptate molestias aperiam ipsum, possimus exercitationem et necessitatibus odit, dignissimos deserunt laudantium corrupti aspernatur totam minus id! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, pariatur. Inventore blanditiis iste dolore qui culpa numquam iusto tenetur sed quae. Inventore facere maiores, ratione perferendis et itaque quae incidunt. <br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis omnis debitis quia illum corporis necessitatibus quam earum dolor quo possimus! Nesciunt asperiores magnam cumque molestias aut expedita cupiditate assumenda voluptatibus? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod ipsum eveniet animi aperiam, temporibus autem sunt earum corporis dolore, voluptatibus necessitatibus ex ratione cum magni quibusdam, laborum quidem quaerat velit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, sint non asperiores fugit vel, rerum cumque quis, unde doloribus officiis odio. Ex ratione amet necessitatibus voluptatum explicabo praesentium voluptatem assumenda.<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque reprehenderit alias, dolore quis atque vel iste, explicabo tempora, nisi officiis quibusdam quod sequi mollitia rem ex. Consequuntur sequi magnam iusto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, est neque rem commodi architecto minus praesentium, nesciunt cum autem rerum cumque consequatur necessitatibus iste molestias illum modi asperiores fuga ad! Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, inventore, excepturi perspiciatis iure quidem cupiditate molestiae eaque reprehenderit ipsum iste distinctio. Error eaque architecto veritatis dolore alias numquam pariatur iusto.</p>
+        </div>
+      </div>
+  
+      <div class="new-window-portfolio" id="portfolioWindow">
+        <div class="content-portfolio">
+          <!-- Content of the portfolio window -->
+          <div class="portfolio-headers">
+          <a href="#apps-section">Apps</a> <a href="#3d-section">3D Modeling</a> <a href="#ui-section">UI/UX</a>
+          </div>
+  
+      <h2 id="apps-section">Apps & Software </h2>
+        <p>Talk about software and apps I've done or worked on here.</p>
+  
+      <h2 id="3d-section">3D Modeling</h2>
+       <p>3D design is one of my passions and my go to is using Sketchup. I have worked in 
+            home remodeling, carpentry and woodworking which fostered an appreciation for the archietcural
+            aspects of buildings, furniture and even sculptures. Below is how a concept might go from the 
+            mind to paper sketch, to a Sketchup model to 3D rendered image (from another software). 
+            The final render was done using Twilight. Most of my renders are done in Twilight
+            but other's such as Enscape were used. 
+          </p>
+  
+      <img class="img_3d" src="img/3d-diego-paper.jpg" alt="Paper sketched concept">
+      <br>
+      <img class="img_3d" src="img/3d-diego-sketchup.jpg" alt="Sketchup finished model">
+      <br>
+      <img class="img_3d" src="img/3DDiego-portItem.jpg" alt="Final render finished">
+      <h2 id="ui-section">User Interface & Experience</h2>
+      <p>Talk about brief UI UX stuff here</p>
+   
+        </div>
+      </div>
+  
+      <div class="new-window-contact" id="contactWindow">
+        <div class="content-contactForm">
+          <form action="submit.php" method="post"> <!-- Replace "submit.php" with your form processing script -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+</div>
+   
+    <script src="togglelines.js"></script>
+     <script src="slideouts.js"></script>
+    </body> 
+</html>
