@@ -177,7 +177,7 @@ body {
     justify-content: center;
     height: 7%;
     width: 90px;
-    background-color: darkgray;
+    background-color: rgb(149, 164, 162);
     border-radius: 11px;
     text-decoration: none;
     transition: color 0.2s;
