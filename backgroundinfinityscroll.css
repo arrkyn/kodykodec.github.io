@@ -5,7 +5,7 @@
 @import url(https://fonts.googleapis.com/css?family=Exo:100);
 /* Background data (Original source: https://subtlepatterns.com/grid-me/) */
 /* Animations */
-/* @-webkit-keyframes bg-scrolling-reverse {
+@-webkit-keyframes bg-scrolling-reverse {
   100% {
     background-position: 50px 50px;
   }
@@ -19,13 +19,13 @@
   100% {
     background-position: 50px 50px;
   }
-} */
+}
 @keyframes bg-scrolling-reverse {
   0% {
     background-position: -50px 50px;
   }
 }
-/* @-webkit-keyframes bg-scrolling {
+@-webkit-keyframes bg-scrolling {
   0% {
     background-position: 50px 50px;
   }
@@ -39,21 +39,21 @@
   0% {
     background-position: 50px 50px;
   }
-} */
+}
 @keyframes bg-scrolling {
   0% {
     background-position: 50px 50px;
   }
 }
 /* Main styles */
-body {
-  margin-top: 13.5rem;
+.frame-wrapper {
+ 
   color: #999;
   font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
   text-align: center;
   /* img size is 50x50 */
-  background: url("../webb-dark.png") repeat 0 0;
-  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+  background: url("webb-dark.png") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 0.40s infinite;
   /* Safari 4+ */
   -moz-animation: bg-scrolling-reverse 0.92s infinite;
   /* Fx 5+ */
@@ -66,8 +66,4 @@ body {
   -o-animation-timing-function: linear;
   animation-timing-function: linear;
 }
-body::before {
-  font-size: 8rem;
-  font-weight: 100;
-  font-style: normal;
-}
+
