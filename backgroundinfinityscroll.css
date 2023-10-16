@@ -47,13 +47,15 @@
 }
 /* Main styles */
 .frame-wrapper {
- 
-  color: #999;
+  
+  color: rgb(0, 0, 0);
   font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
   text-align: center;
   /* img size is 50x50 */
-  background: url("webb-dark.png") repeat 0 0;
-  -webkit-animation: bg-scrolling-reverse 0.40s infinite;
+  background-color: rgba(251, 0, 0, 0.222);
+  background: url("../img/webb-dark.png") repeat 0 0;
+  
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
   /* Safari 4+ */
   -moz-animation: bg-scrolling-reverse 0.92s infinite;
   /* Fx 5+ */
@@ -66,4 +68,3 @@
   -o-animation-timing-function: linear;
   animation-timing-function: linear;
 }
-

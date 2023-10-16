@@ -10,20 +10,22 @@
         height: 96%;
         width: 95%;
         min-width: 60%;
-        
     }
 
-    .dot-center, .dot-left, .dot-right {
-    top: 20px;
+    .new-window-contact {
+        height: 70%;
     }
 
-    .dot-center  { 
+    .portfolio-headers { 
+        top: -30px;
+        padding-top: 10px;
+    }
+
+    .top-light  { 
+    top:20px;
     width: 45px;
     height: 20px;
     }
-    
-
- 
 
     #about {
         z-index: 2;

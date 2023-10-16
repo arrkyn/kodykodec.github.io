@@ -48,7 +48,7 @@ document.getElementById('about').addEventListener('click', function() {
       contactBorder.classList.remove('border-light');
     }
   });
-  
+
   document.getElementById('portfolio').addEventListener('click', function() {
     var fixedFrame = document.querySelector('.fixed-frame');
     
