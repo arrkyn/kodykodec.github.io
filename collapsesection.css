@@ -1,0 +1,33 @@
+/* Remove the default triangle */
+summary {
+    list-style: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none; /* For Safari */
+}
+
+/* Style for the main summary triangle (rightwards arrow) */
+summary::before {
+    content: '⇨'; /* Rightwards white arrow */
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* When the details are open, use the downwards arrow */
+details[open] summary::before {
+    content: '⇩'; /* Downwards white arrow */
+}
+
+/* Override for the close-summary to always point upwards */
+details[open] .close-summary::before {
+    content: '⇧'; /* Upwards white arrow */
+}
+
+/* Style for the close link */
+.close-summary {
+    color: rgb(43, 86, 61);
+    cursor: pointer;
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 10px;
+}

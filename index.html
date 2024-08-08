@@ -8,6 +8,7 @@
   <link rel='stylesheet' type='text/css' media='screen' href='styles-1.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='matrixrain.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='mediaqueries.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='collapsesection.css'>
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Yuji+Hentaigana+Akari&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akari&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -69,31 +70,34 @@
             <br>
             <!-- Content of the about window -->
           
-            <span><b>This is my landing page that I hand-coded in vanilla HTML, CSS and some Javascript. </b></span><p>
+            <span><b>Welcome to my landing page that I hand-coded in vanilla HTML, CSS and some Javascript. </b></span><p>
             
-            <i>I go by RJ or Kody, or even sometimes Robert. One time I was even called “Bob”.</i><p> 
+            <b>I go by RJ or Kody, or even sometimes Robert.</b> <br><i>One time I was even called “Bob”...</i><p> 
 
-            I offer a skillset of Design, 3D modeling and rendering. UI/UX and Software Development. Below are some of my accomplishments. See my portfolio for some of my work.<p>
-              Some of my interests include music, reading, art, woodworking and gaming. I love to innovate and create things. A practioner of Zen and lover of nature, and my chonky cat Hugo &#x1F63A;
-            </p>
-            
-            Software Development AA Graduate - CCAC<br>
-            Liberals Arts & Sciences AA Graduate - CCAC <br>
-            Software Development Certificate - CCAC <br>
-            Robotics Academy Internship Graduate - CMU <br><br>
+            My skillset contains Design, 3D modeling, rendering, UI/UX and Software Development. 
+            </p><b>Degrees and Certifications:</b>
 
+            <div class="list-container">
+              <ul>
+                  <li>Software Development AA Graduate - CCAC</li>
+                  <li>Liberals Arts & Sciences AA Graduate - CCAC</li>
+                  <li>Software Development Certificate - CCAC</li>
+                  <li>Robotics Academy Internship Graduate - CMU</li>
+              </ul>
+          </div>
+
+            Some of my interests include music, reading, art, woodworking and gaming. I love to innovate and create things. A practioner of Zen and lover of nature, and my chonky cat Hugo &#x1F63A;
+            <p>
             <details>
               <summary>Extended About Me</summary>
             <p>
              My interests span from the scientific to the creative. Originally enrolled at the Community College of Allegheny County, (CCAC) for the undergraduate program for Psychology. I then moved into Software Development.</p>My inclination for psychology was always driven by my intuition and personal experience with mental health. I appreciate the scientific method as a framework to study the human brain and behaviors, and psychology is still a deeply nestled affinity. The creative side however was another important aspect that clawed its way forward and directed my sails into this new domain, notably apps. I had a catalyst for diving into Intro to Programming through my own mobile app idea. I held onto it for years and never thought I was the ‘type’ for programming, coding or engineering. With support from a dear friend, and some self determination, I took on the challenge to learn to code. I self-taught Java as my first language. I slowly came around to these novel and abstract concepts. I then enrolled in two Java courses at my college, which expanded into Web Development, Databases, Networking and an Android Mobile App course. I graduated with two AA (Associate of the Arts) degrees along with a certificate in Software Development. A participating member of my college Computer Club where I became more affluent with the culture of other software dev students and faculty. Learning, assisting and socializing with those in the space. I then branched out into local communities in Pittsburgh to network and continue in the presence of like minded people who share a career or interest for software, design or engineering. I was an attendee of Code and Coffee Pittsburgh and a regular attendee at Code and Supply in Pittsburgh.
             <p>
-            </details>
-
-
+               
+              <summary class="close-summary" onclick="this.closest('details').removeAttribute('open')">collapse</summary>
+              </details>
             <p>
-       
-            <p>
-            A PDF of my current resume here. 
+            A PDF of my current resume <a href="res/RDell'Aquila - Resume(SWE).pdf" download="RDell'Aquila - Resume(SWE)">here</a>
             <p>
             Feel free to use the contact form on this site, or via LinkedIn. 
             <p>
@@ -109,7 +113,7 @@
             </div>
 
             <h2 id="apps-section">Apps & Software </h2>
-            <p>Talk about software and apps I've done or worked on here.</p>
+            <p>//todo</p>
             <br>
             <h2 id="3d-section">3D Modeling</h2>
             <p>3D design is one of my passions. My background in
@@ -125,7 +129,7 @@
             <br>
             <h2 id="ui-section">User Interface & Experience</h2>
             <br>
-            <p>Talk about brief UI UX stuff here</p>
+            <p>//todo</p>
 
           </div>
         </div>
