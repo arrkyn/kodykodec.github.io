@@ -16,6 +16,7 @@ body {
 }
 
 .frame-wrapper {
+    text-align: center;
     background-color: rgba(149, 183, 175, 0.222);
     position: fixed;
     inset: 0;
@@ -24,9 +25,9 @@ body {
     width: 800px;
     min-width: 60%;
     overflow: hidden;
-    border: 2px solid transparent; /* transparent border to create space for the glow */
+     /* transparent border to create space for the glow */
     border-radius: 5px; 
-   /* box-shadow: 3 3 3px rgba(0, 238, 255, 0.7);  the glowing effect using box-shadow */
+ 
     /*animation: glow 1s ease-in-out infinite alternate;  a CSS animation for continuous glowing */
   }
 
