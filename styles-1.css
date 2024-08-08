@@ -118,9 +118,15 @@ body {
     width: 50px;
     height: 20px;
     background-color: rgb(149, 164, 162);
-    border-radius: 3px;
-    
+    border-radius: 3px; 
   }
+
+  svg {
+    transform: rotate(90deg);
+    transform-origin: center;
+  }
+
+  
 
   .hr-lines { 
       background-color: #000;
