@@ -6,18 +6,6 @@ body {
     overflow: hidden;
 }
 
-.frame-wrapper {
-
-    position: fixed;
-    inset: 0;
-    margin: auto;
-    height: 600px;
-    width: 800px;
-    min-width: 60%;
-   
-    overflow: hidden;
-
-}
 
 .fixed-frame {
     position: fixed;
@@ -168,7 +156,7 @@ body {
   
   
   
-  
+ 
 
 .nav-item {
     color: black;
