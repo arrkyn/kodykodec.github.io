@@ -18,21 +18,21 @@ body {
     min-width: 60%;
     overflow: hidden;
      /* transparent border to create space for the glow */
-    border-radius: 5px; 
+    border-radius: 10px; 
  
     /*animation: glow 1s ease-in-out infinite alternate;  a CSS animation for continuous glowing */
   }
 
 
 .fixed-frame {
+    
     position: fixed;
     inset: 0;
     margin: auto;
     height: 500px;
     width: 800px;
     min-width: 60%;
-    background-color: rgba(157, 219, 206, 0.391);
-    background-color: rgba(168, 221, 202, 0.262);
+    background-color: rgba(141, 230, 211, 0.204);
     overflow: hidden;
 }
 
@@ -111,12 +111,14 @@ body {
     height: 20px;
     background-color: rgb(149, 164, 162);
     border-radius: 3px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
   }
 
   svg {
-    position: absolute;
-    top: -10px;
-    left: 0;
+    height: 40px;
+    width: 40px;
     transform: rotate(90deg);
     transform-origin: center;
     
