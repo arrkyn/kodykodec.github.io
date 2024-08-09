@@ -6,6 +6,7 @@ const lineRightVert = document.querySelector('.line-right-vert');
 const lineBottomLeftAbout = document.querySelector('.line-bottom-left-about');
 const lineBottomLeftPortfolio = document.querySelector('.line-bottom-left-portfolio');
 const lineBottomRightContact = document.querySelector('.line-bottom-right-contact');
+const energyIcon = document.querySelector('svg');
 
 //const aboutBorder = document.querySelector('.border-light-up');
 
@@ -29,6 +30,8 @@ document.getElementById('about').addEventListener('click', function() {
         lineTopLeft.classList.add('light-up');
         lineLeftVert.classList.add('light-up');
         lineBottomLeftAbout.classList.add('light-up');
+        //turn on battery 
+        energyIcon.classList.add('light-up')
         //trigger booleans 
         lightsAboutOn = true;
         lightsPortfolioOn = false;

@@ -6,6 +6,11 @@ summary {
     -webkit-appearance: none; /* For Safari */
 }
 
+ .about-ext { 
+    text-align: justify;
+    padding: 3%;
+ }
+
 /* Style for the main summary triangle (rightwards arrow) */
 summary::before {
     content: '⇨'; /* Rightwards white arrow */

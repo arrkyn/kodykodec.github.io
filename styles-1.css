@@ -244,20 +244,21 @@ body {
 
 .new-window-about {
     font-family: 'Exo', sans-serif;
-    font-weight: thin 100;
     z-index: -1;
     position: absolute;
     top: 11px;
-    width: 99%;
-    max-width: 99%;
+    left: 0; /* Ensure the window starts from the left */
+    width: calc(100% - 40px); /* Adjust width to account for padding */
+    max-width: calc(100% - 40px); /* Ensure the max-width is also adjusted */
     max-height: 89%;
     background-color: rgb(223, 222, 212);
     transition: transform 0.5s ease;
     transform: translateX(-100%);
-    overflow: scroll;
-    justify-content: flex-start;
-    margin-right: 20px;
-    
+    overflow: auto; /* Use auto to show scrollbars if needed */
+    padding: 0 20px; /* Apply equal padding to left and right */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    border-top-right-radius: 15px; /* Adjust radius as needed */
+    border-bottom-right-radius: 15px; /* Adjust radius as needed */
 }
 
 .fixed-frame.open-about .new-window-about {
