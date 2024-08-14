@@ -44,6 +44,7 @@ body {
     height: 2px;
     width: 50%;
     background-color: #000;
+    z-index: 2;
 }
 .line-top-right {
     position: absolute;
@@ -52,6 +53,7 @@ body {
     height: 2px;
     width: 50%;
     background-color: #000;
+    z-index: 2;
 }
 .line-left-vert {
     position: absolute;
@@ -59,6 +61,7 @@ body {
     width: 3px;
     height: 100%;
     background-color: #000;
+    z-index: 2;
 }
 .line-right-vert {
     position: absolute;
@@ -67,6 +70,7 @@ body {
     width: 3px;
     height: 100%;
     background-color: #000;
+    z-index: 2;
 }
 .line-bottom-left-about {
     position: absolute;
@@ -75,6 +79,7 @@ body {
     height: 2px;
     width: 10%;
     background-color: #000;
+    z-index: 2;
 }
 .line-bottom-left-portfolio {
     position: absolute;
@@ -83,6 +88,7 @@ body {
     height: 2px;
     width: 50%;
     background-color: #000;
+    z-index: 2;
 }
 .line-bottom-right-contact {
     position: absolute;
@@ -91,6 +97,7 @@ body {
     height: 2px;
     width: 10%;
     background-color: #000;
+    z-index: 2;
 }
 .line-bottom-right-free {
     position: absolute;
@@ -99,6 +106,7 @@ body {
     height: 2px;
     width: 40%;
     background-color: #000;
+    z-index: 2;
 }
 
 .top-light {
@@ -194,6 +202,17 @@ body {
     transition: background-color 0.1s ease;
 }
 
+/* Default fill color for SVG */
+svg path {
+    fill: #000000; /* Default fill color */
+}
+
+/* Fill color when 'light' class is added to the SVG */
+svg.light path {
+    fill: rgb(237, 255, 251); /* Light color */
+}
+
+
 .border-light {
     background-color: rgb(122, 182, 166);
     background-color: rgb(195, 218, 213);
@@ -244,7 +263,7 @@ body {
 
 .new-window-about {
     font-family: 'Exo', sans-serif;
-    z-index: -1;
+    z-index: 1;
     position: absolute;
     top: 11px;
     left: 0; /* Ensure the window starts from the left */
@@ -272,7 +291,7 @@ body {
 }
 
 .new-window-portfolio {
-    z-index: -1;
+    z-index: 1;
     border-radius: 0% 0% 05% 5%;
     position: absolute;
     top: 1px;
@@ -292,7 +311,7 @@ body {
 }
 
 .new-window-contact {
-    z-index: -1;
+    z-index: 1;
     border-radius: 5% 0 0 5%;
     position: absolute;
     top: 10%;

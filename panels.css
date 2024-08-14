@@ -1,0 +1,116 @@
+body {
+    background-color: beige;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+  }
+  
+  .panel-wall { 
+    border: 1px solid red;
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 0; /* Remove padding to eliminate extra space */
+  }
+  
+  .panel-wrapper { 
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap; /* Arrange panels in a flexible grid */
+    gap: 15px; /* Optional: Add space between panels */
+    padding: 0; /* Remove padding to eliminate extra space */
+  }
+  
+  .glass-panel { 
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.8px);
+    -webkit-backdrop-filter: blur(4.8px);
+    position: relative; /* Position panels relative to wrapper */
+    z-index: 1; /* Ensure panels are behind slide-out windows */
+  }
+  
+  .hole {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    border: 0.5px solid rgba(255, 255, 255, 0.60);
+  }
+  
+  .top-left {
+    left: 7px;
+    top: 7px;
+  }
+  
+  .top-right {
+    right: 7px;
+    top: 7px;
+  }
+  
+  .bottom-right {
+    right: 7px;
+    bottom: 7px;
+  }
+  
+  .bottom-left {
+    left: 7px;
+    bottom: 7px;
+  }
+  
+  
+  
+  #g1 { 
+    background: rgba(130, 255, 255, 0.15);
+    height: 480px;
+    width: 240px;
+  }
+  
+  #g2 { 
+    
+    height: 240px;
+    width: 180px;
+  }
+  
+  #g3 { 
+    background: rgba(230, 155, 55, 0.10);
+    height: 305px;
+    width: 125px;
+  }
+  
+  #g4 { 
+    height: 305px;
+    width: 205px;
+  }
+  
+  #g5 { 
+    height: 150px;
+    width: 375px;
+    
+    border: 1px solid blue;
+  }
+  #g6 {
+    position: absolute;
+    right: 225px;
+    bottom: 355px;
+    height: 180px;
+    width: 205px;
+    transform: rotate(90deg);
+  }
+  
+  .hole { 
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    border: 0.5px solid rgba(255, 255, 255, 0.60);
+  }
+  
+  
+  
+  
+  

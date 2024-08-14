@@ -3,6 +3,33 @@
         width: 100%; /* Make the body width 100% to fit smaller screens */
     }
 
+    .extended-about-me {
+        text-align: left; /* Change to center or left to avoid justification gaps */
+    }
+
+    .extended-about-me {
+        word-wrap: break-word; /* Ensure words break correctly */
+        hyphens: auto; /* Add hyphenation where necessary */
+    }
+
+   /* Media query for screens with a max width of 341px */
+@media (max-width: 341px) {
+    /* Styles for screens up to 341px wide */
+    body {
+        padding: 0 5px; /* Reduce padding further for smaller screens */
+    }
+
+    @media (max-width: 341px) {
+        .extended-about-me {
+            word-spacing: normal; /* Reset to default */
+        }
+    }
+    
+
+    /* Other styles for 341px and below */
+    .frame-wrapper {
+        width: 90%; /* Adjust width for very small screens */
+    }
     .frame-wrapper { 
         position: fixed;
         inset: 0;
@@ -68,4 +95,5 @@
         width: 75%;
     }
     
+}
 }

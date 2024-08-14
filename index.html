@@ -9,174 +9,230 @@
   <link rel='stylesheet' type='text/css' media='screen' href='matrixrain.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='mediaqueries.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='collapsesection.css'>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Yuji+Hentaigana+Akari&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Yuji+Hentaigana+Akari&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akari&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200;300&family=Lato:wght@100;300&family=Mulish:wght@200;300&family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo:wght@200;300&family=Lato:wght@100;300&family=Mulish:wght@200;300&family=Poppins:wght@100;300;400;600&display=swap"
+    rel="stylesheet">
+  <style id="dynamic-styles"></style> <!-- Placeholder for dynamic CSS -->
 </head>
 
 <body>
- 
-    <div class="frame-wrapper">
 
-      <div class="top-light">
-        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-         width="50" height="40" viewBox="0 0 300.000000 300.000000"
-         preserveAspectRatio="xMidYMid meet">
-        <g transform="translate(0.000000,300.000000) scale(0.050000,-0.050000)"
-           fill="#000000" stroke="none">
-            <path d="M2752 3975 l-1071 -1345 589 -5 c325 -3 590 -9 590 -13 0 -5 -157
+  <div class="frame-wrapper">
+
+    <div class="top-light">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 300.000000 300.000000"
+        preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(0.000000,300.000000) scale(0.050000,-0.050000)" fill="#000000" stroke="none">
+          <path d="M2752 3975 l-1071 -1345 589 -5 c325 -3 590 -9 590 -13 0 -5 -157
             -443 -350 -974 -192 -531 -347 -967 -345 -969 3 -3 490 604 1082 1348 l1077
             1353 -594 5 c-554 5 -593 8 -580 40 99 255 690 1905 681 1905 -4 0 -490 -605
-            -1079 -1345z"/>
+            -1079 -1345z" />
         </g>
-    </svg>
+      </svg>
+    </div>
+
+
+
+
+    <div class="nav-container">
+      <div class="nav-item" id="about">about</div>
+      <nav class="nav-item" id="portfolio">portfolio</nav>
+      <nav class="nav-item" id="contact">contact</nav>
+    </div>
+
+
+    <div class="fixed-frame">
+      <div id="content-container"></div> <!-- Placeholder for dynamic HTML -->
+
+      <script>
+        // Create a shadow root
+        const shadowRoot = document.getElementById('content-container').attachShadow({ mode: 'open' });
+
+        // Load HTML
+        fetch('panels.html')
+          .then(response => response.text())
+          .then(html => {
+            shadowRoot.innerHTML = html;
+          })
+          .catch(error => console.error('Error loading HTML:', error));
+
+        // Load CSS
+        fetch('panels.css')
+          .then(response => response.text())
+          .then(css => {
+            const style = document.createElement('style');
+            style.textContent = css;
+            shadowRoot.appendChild(style);
+          })
+          .catch(error => console.error('Error loading CSS:', error));
+
+      </script>
+
+      <div class="lines">
+
+        <div class="line-top-left"> </div>
+        <div class="line-top-right"> </div>
+        <div class="line-left-vert"> </div>
+        <div class="line-right-vert"> </div>
+        <div class="line-bottom-left-about"> </div>
+        <div class="line-bottom-left-portfolio"> </div>
+        <div class="line-bottom-right-contact"> </div>
+        <div class="line-bottom-right-free"> </div>
+
       </div>
 
-      
 
+      <div class="new-window-about" id="aboutWindow">
+        <div class="content-about">
+          <div class="links">Follow me on: <a href="My LinkedIn">LinkedIn</a> </div>
+          <br>
+          <!-- Content of the about window -->
 
-      <div class="nav-container">
-        <div class="nav-item" id="about">about</div>
-        <nav class="nav-item" id="portfolio">portfolio</nav>
-        <nav class="nav-item" id="contact">contact</nav>
-      </div>
+          <span><b>Welcome to my landing page that I hand-coded in vanilla HTML, CSS and some Javascript. </b></span>
+          <p>
 
+            <b>I go by RJ or Kody, or even sometimes Robert.</b> <br><i>One time I was even called “Bob”...</i>
+          <p>
 
-      <div class="fixed-frame">
-        
-  
-        <div class="lines">
-           
-          <div class="line-top-left"> </div>
-          <div class="line-top-right"> </div>
-          <div class="line-left-vert"> </div>
-          <div class="line-right-vert"> </div>
-          <div class="line-bottom-left-about"> </div>
-          <div class="line-bottom-left-portfolio"> </div>
-          <div class="line-bottom-right-contact"> </div>
-          <div class="line-bottom-right-free"> </div>
-      
-        </div>
+            My skillset contains Design, 3D modeling, rendering, UI/UX and Software Development.
+          </p><b>Degrees and Certifications:</b>
 
-
-        <div class="new-window-about" id="aboutWindow">
-          <div class="content-about">
-            <div class="links">Follow me on: <a href="My LinkedIn">LinkedIn</a> </div>
-            <br>
-            <!-- Content of the about window -->
-          
-            <span><b>Welcome to my landing page that I hand-coded in vanilla HTML, CSS and some Javascript. </b></span><p>
-            
-            <b>I go by RJ or Kody, or even sometimes Robert.</b> <br><i>One time I was even called “Bob”...</i><p> 
-
-            My skillset contains Design, 3D modeling, rendering, UI/UX and Software Development. 
-            </p><b>Degrees and Certifications:</b>
-
-            <div class="list-container">
-              <ul>
-                  <li>Software Development AA Graduate - CCAC</li>
-                  <li>Liberals Arts & Sciences AA Graduate - CCAC</li>
-                  <li>Software Development Certificate - CCAC</li>
-                  <li>Robotics Academy Internship Graduate - CMU</li>
-              </ul>
+          <div class="list-container">
+            <ul>
+              <li>Software Development AA Graduate - CCAC</li>
+              <li>Liberals Arts & Sciences AA Graduate - CCAC</li>
+              <li>Software Development Certificate - CCAC</li>
+              <li>Robotics Academy Internship Graduate - CMU</li>
+            </ul>
           </div>
 
-            Some of my interests include music, reading, art, woodworking and gaming. I love to innovate and create things. A practioner of Zen and lover of nature, and my chonky cat Hugo &#x1F63A;
+          Some of my interests include music, reading, art, woodworking and gaming. I love to innovate and create
+          things. A practioner of Zen and lover of nature, and my chonky cat Hugo &#x1F63A;
+          <p>
+          <details>
+            <summary>Extended About Me</summary>
             <p>
-            <details>
-              <summary>Extended About Me</summary>
-            <p>
-              <div class="about-ext">
-                My interests span from the scientific to the creative. Originally enrolled at the Community College of Allegheny County, (CCAC) for the undergraduate program for Psychology. I then moved into Software Development.<p>My inclination for psychology was always driven by my intuition and personal experience with mental health. With 
-                  The scientific method as a framework to study the human brain and behaviors, psychology remains a deeply nestled affinity. <p>The creative side of mind was another important aspect that bubbled up and directed my sails into a new domain, notably apps. <p>The catalyst for diving into an Intro to Programming course spurred through my own mobile app idea. I held onto it for years and never thought I was the ‘type’ for programming, coding or engineering. However, with support from a dear friend, and some self-determination, I took on the challenge to learn to code. <p>I self-taught Java as my first language. I slowly came around to these novel, highly technical and abstract concepts. I then enrolled in courses at my college. Java 1 and 2, Intro to C, which expanded into Web Development, Databases, Networking and an Android Mobile App course. <p>I graduated with two AA (Associate of the Arts) degrees along with a certificate in Software Development. A participating member of my college Computer Club where I became more affluent with the culture of other software dev students and faculty. Learning, assisting and socializing with those in the space. I then branched out into local communities in Pittsburgh to network and continue in the presence of like minded people who share a career or interest for software, design or engineering. I was an attendee of Code and Coffee Pittsburgh and a regular attendee at Code and Supply in Pittsburgh.<p> Lastly, I was fortunate enough to intern at Carnegie Mellon's Robotic Academy, where I learned about the electro and mechanical foundations of robots, autonomous bots, and a great deal about AI and Machine Learning throughout the training. I find that my understanding of technology and design is ever evolving and it only helps to draw more connections to solving real world problems and being effective in many endeavors.
-     </div>
-              <summary class="close-summary" onclick="this.closest('details').removeAttribute('open')">collapse</summary>
-              </details>
-            <p>
-            A PDF of my current resume <a href="res/RDell'Aquila - Resume(SWE).pdf" download="RDell'Aquila - Resume(SWE)">here</a>
-            <p>
-            Feel free to use the contact form on this site. 
-            <p>
-            Thank you for stopping by!
-          </div>
-        </div>
-
-        <div class="new-window-portfolio" id="portfolioWindow">
-          <div class="content-portfolio">
-            <!-- Content of the portfolio window -->
-            <div class="portfolio-headers">
-              <a href="#apps-section">Apps</a> <a href="#3d-section">3D Modeling</a> <a href="#ui-section">UI/UX</a>
+            <div class="about-ext">
+              My interests span from the scientific to the creative. Originally enrolled at the Community College of
+              Allegheny County, (CCAC) for the undergraduate program for Psychology. I then moved into Software
+              Development.<p>My inclination for psychology was always driven by my intuition and personal experience
+                with mental health. With
+                The scientific method as a framework to study the human brain and behaviors, psychology remains a deeply
+                nestled affinity.
+              <p>The creative side of mind was another important aspect that bubbled up and directed my sails into a new
+                domain, notably apps.
+              <p>The catalyst for diving into an Intro to Programming course spurred through my own mobile app idea. I
+                held onto it for years and never thought I was the ‘type’ for programming, coding or engineering.
+                However, with support from a dear friend, and some self-determination, I took on the challenge to learn
+                to code.
+              <p>I self-taught Java as my first language. I slowly came around to these novel, highly technical and
+                abstract concepts. I then enrolled in courses at my college. Java 1 and 2, Intro to C, which expanded
+                into Web Development, Databases, Networking and an Android Mobile App course.
+              <p>I graduated with two AA (Associate of the Arts) degrees along with a certificate in Software
+                Development. A participating member of my college Computer Club where I became more affluent with the
+                culture of other software dev students and faculty. Learning, assisting and socializing with those in
+                the space. I then branched out into local communities in Pittsburgh to network and continue in the
+                presence of like minded people who share a career or interest for software, design or engineering. I was
+                an attendee of Code and Coffee Pittsburgh and a regular attendee at Code and Supply in Pittsburgh.
+              <p> Lastly, I was fortunate enough to intern at Carnegie Mellon's Robotic Academy, where I learned about
+                the electro and mechanical foundations of robots, autonomous bots, and a great deal about AI and Machine
+                Learning throughout the training. I find that my understanding of technology and design is ever evolving
+                and it only helps to draw more connections to solving real world problems and being effective in many
+                endeavors.
             </div>
-
-            <h2 id="apps-section">Apps & Software </h2>
-            <p>//todo</p>
-            <br>
-            <h2 id="3d-section">3D Modeling</h2>
-            <p>3D design is one of my passions. My background in
-              home remodeling, carpentry and woodworking fostered an appreciation for architectural
-              aspects, furniture and sculpture. Below is how a concept might go from a pencil drawing to Sketchup model to 3D rendered image.
-  
-            </p>
-
-            <br>
-            <img class="img_3d" src="img/3d-diego-sketchup.jpg" alt="Sketchup finished model">
-            <br>
-            <img class="img_3d" src="img/3DDiego-portItem.jpg" alt="Final render finished">
-            <br>
-            <h2 id="ui-section">User Interface & Experience</h2>
-            <br>
-            <p>//todo</p>
-
-          </div>
+            <summary class="close-summary" onclick="this.closest('details').removeAttribute('open')">collapse</summary>
+          </details>
+          <p>
+            A PDF of my current resume <a href="res/RDell'Aquila - Resume(SWE).pdf"
+              download="RDell'Aquila - Resume(SWE)">here</a>
+          <p>
+            Feel free to use the contact form on this site.
+          <p>
+            Thank you for stopping by!
         </div>
+      </div>
 
-        
+      <div class="new-window-portfolio" id="portfolioWindow">
+        <div class="content-portfolio">
+          <!-- Content of the portfolio window -->
+          <div class="portfolio-headers">
+            <a href="#apps-section">Apps</a> <a href="#3d-section">3D Modeling</a> <a href="#ui-section">UI/UX</a>
+          </div>
 
-<div class="new-window-contact" id="contactWindow">
-  <iframe name="submit-iframe" style="display: none;"></iframe>
-  <div class="content-contactForm" id="contactForm">
+          <h2 id="apps-section">Apps & Software </h2>
+          <p>//todo</p>
+          <br>
+          <h2 id="3d-section">3D Modeling</h2>
+          <p>3D design is one of my passions. My background in
+            home remodeling, carpentry and woodworking fostered an appreciation for architectural
+            aspects, furniture and sculpture. Below is how a concept might go from a pencil drawing to Sketchup model to
+            3D rendered image.
 
-    <form action="https://formspree.io/f/xbjvqaey" method="POST" target="submit-iframe">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      <br>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <br>
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-    
-      <button type="submit">Send</button>
-    </form>
-    
+          </p>
+
+          <br>
+          <img class="img_3d" src="img/3d-diego-sketchup.jpg" alt="Sketchup finished model">
+          <br>
+          <img class="img_3d" src="img/3DDiego-portItem.jpg" alt="Final render finished">
+          <br>
+          <h2 id="ui-section">User Interface & Experience</h2>
+          <br>
+          <p>//todo</p>
+
+        </div>
+      </div>
+
+
+
+      <div class="new-window-contact" id="contactWindow">
+        <iframe name="submit-iframe" style="display: none;"></iframe>
+        <div class="content-contactForm" id="contactForm">
+
+          <form action="https://formspree.io/f/xbjvqaey" method="POST" target="submit-iframe">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send</button>
+          </form>
+
+        </div>
+      </div>
+
+      <div id="success-toast" style="display: none;">
+        <p class="toast-email-sent">Thank you! Message sent!</p>
+
+        <style>
+          .toast-email-sent {
+            padding: 3%;
+            width: 30%;
+            background-color: rgb(136, 198, 188);
+          }
+        </style>
+      </div>
+
+      <script src="togglelines.js"></script>
+      <script src="slideouts.js"></script>
+      <script src="redirect.js"></script>
+      <script src="close-success-toast.js"></script>
+      <script src="matrixrain.js"></script>
+
+    </div>
   </div>
-</div>
-
-<div id="success-toast" style="display: none;">
-  <p class="toast-email-sent">Thank you! Message sent!</p>
-
-  <style>
-    .toast-email-sent { 
-      padding: 3%;
-      width: 30%;
-      background-color: rgb(136, 198, 188);
-    }
-  </style>
-</div>
-
-    <script src="togglelines.js"></script>
-    <script src="slideouts.js"></script>
-    <script src="redirect.js"></script>
-    <script src="close-success-toast.js"></script>
-    <script src="matrixrain.js"></script>
-
-  </div>
-</div>
 </body>
 
 </html>
