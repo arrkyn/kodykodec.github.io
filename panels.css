@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
     background-color: beige;
     left: 50%;
@@ -6,7 +10,6 @@ body {
   }
   
   .panel-wall { 
-    border: 1px solid red;
     position: relative;
     display: flex;
     justify-content: center; /* Center content horizontally */
@@ -15,11 +18,11 @@ body {
   }
   
   .panel-wrapper { 
-    border: 1px solid red;
     display: flex;
     flex-wrap: wrap; /* Arrange panels in a flexible grid */
     gap: 15px; /* Optional: Add space between panels */
     padding: 0; /* Remove padding to eliminate extra space */
+    height: 450px; /* Set a specific height or adjust as needed */
   }
   
   .glass-panel { 
@@ -30,6 +33,9 @@ body {
     -webkit-backdrop-filter: blur(4.8px);
     position: relative; /* Position panels relative to wrapper */
     z-index: 1; /* Ensure panels are behind slide-out windows */
+    flex: 1 1 auto; /* Allow panels to grow and shrink as needed */
+    max-width: calc(100% / 3 - 15px); /* Adjust based on the number of panels per row */
+    max-height: 100%; /* Make sure panels fit within the wrapper's height */
   }
   
   .hole {
@@ -65,12 +71,12 @@ body {
   
   #g1 { 
     background: rgba(130, 255, 255, 0.15);
-    height: 480px;
+    height: 280px;
     width: 240px;
   }
   
   #g2 { 
-    
+    left: 50px;
     height: 240px;
     width: 180px;
   }
@@ -82,24 +88,21 @@ body {
   }
   
   #g4 { 
-    height: 305px;
+    height: 105px;
     width: 205px;
+
   }
   
   #g5 { 
-    height: 150px;
-    width: 375px;
-    
-    border: 1px solid blue;
+    height: 110px;
+    width: 175px;
   }
+  
   #g6 {
-    position: absolute;
-    right: 225px;
-    bottom: 355px;
-    height: 180px;
-    width: 205px;
-    transform: rotate(90deg);
-  }
+   
+    height: 100px;
+    width:20px;
+    
   
   .hole { 
     position: absolute;
@@ -112,5 +115,15 @@ body {
   
   
   
-  
+  @media (max-width: 768px) {
+    .panel-wrapper {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+    
+    .glass-panel {
+        max-width: 100%; /* Ensure panels fit within the wrapper */
+        max-height: 100%; /* Ensure panels fit within the wrapper */
+    }
+  }
+}
   
