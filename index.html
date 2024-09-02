@@ -9,6 +9,7 @@
   <link rel='stylesheet' type='text/css' media='screen' href='matrixrain.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='mediaqueries.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='collapsesection.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='static.css'>
   
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Yuji+Hentaigana+Akari&display=swap"
     rel="stylesheet">
@@ -24,10 +25,20 @@
 </head>
 
 <body>
-
+  <div class="tv-static-background"></div>
   <div class="frame-wrapper">
 
-    <div class="top-light">
+
+    <div class="nav-container">
+      
+      <div class="nav-item" id="about">about</div>
+      <nav class="nav-item" id="portfolio">portfolio</nav>
+      <nav class="nav-item" id="contact">contact</nav>
+    </div>
+
+
+    <div class="fixed-frame">
+<div class="top-light">
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 300.000000 300.000000"
         preserveAspectRatio="xMidYMid meet">
         <g transform="translate(0.000000,300.000000) scale(0.050000,-0.050000)" fill="#000000" stroke="none">
@@ -40,42 +51,29 @@
     </div>
 
 
+    <div id="content-container">
+      <div class="top-section">
+          <img src="img/me-grayscale.jpg" alt="Profile Picture" class="profile-image">
+          <div class="icons">
+              <a href="https://github.com/your-profile" target="_blank">
+                  <img src="img\github-logo-nobackground.png" alt="GitHub">
+              </a>
+              <a href="https://linkedin.com/in/your-profile" target="_blank">
+                  <img src="img\linkedin-logo-nobackground.png" alt="LinkedIn">
+              </a>
+              <!-- Add more icons as needed -->
+          </div>
+      </div>
+      <div class="text-section">
+          <p>Welcome to my landing page that I hand-coded in vanilla HTML, CSS and some Javascript.<p>
+            I go by RJ or Kody, or even sometimes Robert.<p>
+            One time I was even called “Bob”...<p>
+            
+            My skillset contains:<br> Design - 3D modeling - Rendering - Robotics - UI/UX - Software Development</p>
+      </div>
+  </div>
 
-
-    <div class="nav-container">
-      <div class="nav-item" id="about">about</div>
-      <nav class="nav-item" id="portfolio">portfolio</nav>
-      <nav class="nav-item" id="contact">contact</nav>
-    </div>
-
-
-    <div class="fixed-frame">
-      <div id="content-container"></div> <!-- Placeholder for dynamic HTML -->
-
-      <!-- <script>
-        // Create a shadow root
-        const shadowRoot = document.getElementById('content-container').attachShadow({ mode: 'open' });
-
-        // Load HTML
-        fetch('panels.html')
-          .then(response => response.text())
-          .then(html => {
-            shadowRoot.innerHTML = html;
-          })
-          .catch(error => console.error('Error loading HTML:', error));
-
-        // Load CSS
-        fetch('panels.css')
-          .then(response => response.text())
-          .then(css => {
-            const style = document.createElement('style');
-            style.textContent = css;
-            shadowRoot.appendChild(style);
-          })
-          .catch(error => console.error('Error loading CSS:', error));
-
-      </script> -->
-
+    
       <div class="lines">
 
         <div class="line-top-left"> </div>

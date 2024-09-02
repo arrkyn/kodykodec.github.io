@@ -9,17 +9,14 @@ body {
 
 
 .frame-wrapper {
-   
     position: fixed;
     inset: 0;
     margin: auto;
-    height: 600px;
+    height: min-content;
     width: 800px;
     min-width: 60%;
     overflow: hidden;
      /* transparent border to create space for the glow */
-    border-radius: 10px; 
- 
     /*animation: glow 1s ease-in-out infinite alternate;  a CSS animation for continuous glowing */
   }
 
@@ -35,26 +32,106 @@ body {
     position: fixed;
     inset: 0;
     margin: auto;
-    height: 500px;
+    height: 600px;
     width: 800px;
     min-width: 60%;
-    background-image: url('img\purple_stained_glass_43_58_glossiness.jpg');
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.1);
     overflow: hidden;
     -webkit-transform: translateZ(0);
-
+    
 }
 
+@keyframes tv-static {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+.tv-static-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it stays behind other content */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="10" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(#noise)" /></svg>') repeat;
+    animation: tv-static 1s steps(10) infinite;
+    opacity: 1.2; /* Adjust opacity to blend with the content */
+}
+
+
 #content-container {
-    height: 450px;
-    margin: 20px; /* Adjust margin as needed */
-    padding: 0; /* Ensure no extra padding causes overflow */
-    box-sizing: border-box; /* Ensure margin and padding are included in element's total width and height */
+    padding-bottom: 30px;
+    position: absolute;
+    top: calc(40% + 60px); /* Center vertically and add margin-top */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally */
+    height: 80%;
+    width: 80%; 
+    border: 2px solid rgb(149, 164, 162); 
+    background-color: rgba(255, 255, 255, 0.05); 
+}
+
+.top-section {
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    border: 5px double rgb(149, 164, 162);
+    border-radius: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 20px;
+    max-width: 250px;
+    max-height: 250px; /* Ensures the image doesn't overflow vertically */
+    border-radius: 10px;
+    margin-right: 20px;
+    object-fit: contain; /* Ensures the image scales properly within the container */
+}
+
+
+.icons {
+    
+    display: column;
+    top: 20px;
+    right: 20px; /* Position the icons on the right side */
+}
+
+.icons img {
+    
+    display: block;
+    border-radius: 25px;
+   overflow: hidden;
+    width: 100px;
+    height: 60px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.icons img:hover {
+    transform: scale(1.1);
+}
+
+.text-section {
+    bottom: 20px; /* Position the text at the bottom */
+    left: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    max-width: 90%; /* Ensure text stays inside the container */
+
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f7f7f7;
+    
 }
 
 .line-top-left {
     position: absolute;
-    top: 0;
+    top: 10px;
     left: 0;
     height: 2px;
     width: 50%;
@@ -63,7 +140,7 @@ body {
 }
 .line-top-right {
     position: absolute;
-    top: 0;
+    top: 10px;
     right: 0;
     height: 2px;
     width: 50%;
@@ -72,7 +149,7 @@ body {
 }
 .line-left-vert {
     position: absolute;
-    top: 0;
+    top: 10px;
     width: 3px;
     height: 100%;
     background-color: rgb(149, 164, 162);
@@ -80,7 +157,7 @@ body {
 }
 .line-right-vert {
     position: absolute;
-    top: 0;
+    top: 10px;
     right: 0;
     width: 3px;
     height: 100%;
@@ -125,19 +202,21 @@ body {
 }
 
 .top-light {
-    z-index: 5;
+    z-index: 10;
     position: absolute;
-    top: 50px;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -100%); /* Move it above the frame */
     width: 50px;
     height: 20px;
     background-color: rgb(149, 164, 162);
-    border-radius: 3px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-  }
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
   svg {
     height: 40px;
@@ -156,7 +235,9 @@ body {
       inset: 0;
   }
 
- 
+ .nav-container { 
+    
+ }
 
 .nav-item {
     
@@ -228,6 +309,10 @@ svg.light path {
 }
 
 
+
+
+
+
 .border-light {
     background-color: rgb(122, 182, 166);
     background-color: rgb(195, 218, 213);
@@ -286,7 +371,7 @@ svg.light path {
     top: 11px;
     left: 0;
     width: calc(100% - 40px);
-    max-height: 89%;
+    max-height: 91%;
     background: rgba(30, 30, 30) radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 13px 13px;
     padding: 0 20px;
@@ -316,7 +401,7 @@ svg.light path {
     z-index: 1;
     border-radius: 0 0 15px 15px; /* Ensure the syntax is consistent */
     position: absolute;
-    top: 1px;
+    top: 0;
     left: 2%;
     width: 96%;
     height: 90%;
@@ -331,17 +416,18 @@ svg.light path {
 
 .fixed-frame.open-portfolio .new-window-portfolio {
     padding-top: 5%;
-    top: 2px;
+    top: 10px;
     transform: translateY(0);
 }
 
 .new-window-contact {
     z-index: 1;
-    border-radius: 5% 0 0 5%;
+    border-radius: 13px 0 0 13px;
     position: absolute;
     top: 10%;
-    right: 0;
-    width: 50%;
+    right: -3%;
+    margin-right: 3%;
+    width: calc(100% - 40px);
     height: 80%;
     color: rgb(149, 164, 162); /* To maintain consistent text color */
     background: rgba(30, 30, 30) radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px); /* Matching background */
@@ -353,17 +439,16 @@ svg.light path {
 }
 
 .fixed-frame.open-contact .new-window-contact {
-    right: 3px;
-    padding-right: 30px;
+    margin-right: 3%;
     transform: translateX(0);
 }
 
 
 .new-window-contact label {
     display: flex; /* Display labels as block elements, one below the other */
-    margin-bottom: 5px; /* Add some spacing below each label */
     margin-top: 3%;
     margin-left: 5%;
+   
 }
 
 /* Style the textboxes (input fields) */
@@ -373,20 +458,21 @@ svg.light path {
     width: 100%; /* Make textboxes take up the full width of their container */
     padding: 10px; /* Add padding inside textboxes */
     margin-left: 5%;
-    margin-bottom: 5px; /* Add spacing between textboxes */
     border: 1px solid #ccc; /* Add a border around textboxes */
     resize: none;
 }
+    #message { 
+        padding-top: 70px;
+    }
 
 
 .new-window-contact button {
     position: relative;
-    bottom: 10px;
-    
     background-color: rgb(149, 164, 162);
     color: white; 
     padding: 10px 20px; 
-    margin-left: 10%;;
+    margin-top: 3%;
+    margin-left: 10%;
     border: none; 
     border-radius: 3px;
     cursor: pointer; 
@@ -405,8 +491,7 @@ svg.light path {
     background-size: 13px 13px;
     padding: 10px 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    box-sizing: border-box;
-    width: 50%; /* Adjust width as needed for the desired boxed look */
+    width: 60%; /* Adjust width as needed for the desired boxed look */
     margin: 0 auto; /* Center the header horizontally */
     border-radius: 10px; /* Optional: rounded corners */
     border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle border */
@@ -434,7 +519,7 @@ a.underline {
     justify-content: flex-start
 }
 .content-contactForm-label {
-    margin: 0 1vh;
+    margin: 0 3%;
 }
 
 .new-window .content {

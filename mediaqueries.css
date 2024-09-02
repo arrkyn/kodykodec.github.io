@@ -2,6 +2,44 @@
     body {
         width: 100%; /* Make the body width 100% to fit smaller screens */
     }
+}
+    @media (max-width: 370px) {
+        body {
+            width: 100%; /* Make the body width 100% to fit smaller screens */
+        }
+
+        .nav-item { 
+            height: 6%;
+    width: 80px;
+     font-size: large;  
+        }
+       
+    }
+
+    @media (max-width: 300px) {
+        body {
+            width: 100%; /* Make the body width 100% to fit smaller screens */
+        }
+
+        .nav-item { 
+            height: 6%;
+    width: 70px;
+        }
+
+    }
+
+    @media (max-width: 270px) {
+        body {
+            width: 100%; /* Make the body width 100% to fit smaller screens */
+        }
+
+        .nav-item { 
+            height: 6%;
+    width: 4rem;
+     font-size: smaller;  
+        }
+       
+    }
     
     .frame-wrapper { 
         position: fixed;
@@ -78,4 +116,4 @@
         hyphens: auto; /* Add hyphenation where necessary */
     }
     
-}
+
