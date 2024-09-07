@@ -2,6 +2,18 @@
     body {
         width: 100%; /* Make the body width 100% to fit smaller screens */
     }
+
+    #content-container {
+        height: 70%;
+        width: 80%; 
+    }
+
+    .fixed-frame.open-contact .new-window-contact {
+        width: calc(90% - 40px);
+        height: calc(60% - 5%);
+        margin-right:  3%;
+        transform: translateX(0);
+    }
 }
     @media (max-width: 370px) {
         body {

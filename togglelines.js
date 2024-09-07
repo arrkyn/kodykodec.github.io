@@ -16,7 +16,7 @@ function hideContentContainer() {
 }
 
 function showContentContainer() {
-    contentContainer.style.display = 'block';
+    contentContainer.style.display = 'flex';
 }
 
 
