@@ -6,6 +6,7 @@
     #content-container {
         height: 70%;
         width: 80%; 
+        padding-bottom: 50px;
     }
 
     .fixed-frame.open-contact .new-window-contact {
