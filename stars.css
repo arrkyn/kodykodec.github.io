@@ -1,0 +1,41 @@
+.stars-left, .stars-right {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.stars-right {
+    right: 0;
+    transform: rotate(-180deg);
+}
+
+.star {
+    position: absolute;
+    width: 7px; /* Slightly larger dot size */
+    height: 3px; /* Slightly larger dot size */
+    background-color: #ffffff; /* Star color */
+    border-radius: 50%; /* Make the dots circular */
+    filter: drop-shadow(9px 9px 7px rgba(255, 255, 255, 0.1)); /* Softer glow */
+    opacity: 0.3; /* Slightly transparent for a softer look */
+    animation: fall 11s linear infinite, tail-fade 11s ease-out infinite;
+}
+
+@keyframes fall {
+    from {
+        transform: translateX(20vw); /* Start the star off-screen */
+    }
+    to {
+        transform: translateX(-20vw); /* Move the star across the screen */
+    }
+}
+
+@keyframes tail-fade {
+    0%, 50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0.1; /* Softer fade out */
+    }
+}

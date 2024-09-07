@@ -9,6 +9,16 @@ const lineBottomRightContact = document.querySelector('.line-bottom-right-contac
 
 const energyIcon = document.querySelector('svg');
 
+const contentContainer = document.getElementById('content-container');
+
+function hideContentContainer() {
+    contentContainer.style.display = 'none';
+}
+
+function showContentContainer() {
+    contentContainer.style.display = 'block';
+}
+
 
 // Initialize variables to track the state of the lights for each nav item
 let lightsAboutOn = false;
@@ -38,6 +48,8 @@ document.getElementById('about').addEventListener('click', function() {
         lightsPortfolioOn = false;
         lightsContactOn = false;
 
+        hideContentContainer();
+
     } else if(!lightsAboutOn) { //if light to about are off
          // Turn the lights on for 'about'
          lineTopLeft.classList.add('light-up');
@@ -51,6 +63,9 @@ document.getElementById('about').addEventListener('click', function() {
         lightsAboutOn = true;
         lightsPortfolioOn = false;
         lightsContactOn = false;
+
+        hideContentContainer();
+
     } else if (lightsAboutOn) { //if light to about is on
         // Turn the lights off for 'about'
         lineTopLeft.classList.remove('light-up');
@@ -73,6 +88,8 @@ document.getElementById('about').addEventListener('click', function() {
         lightsAboutOn = false;
         lightsPortfolioOn = false;
         lightsContactOn = false;
+
+        showContentContainer();
     }
 });
 
@@ -99,6 +116,8 @@ document.getElementById('portfolio').addEventListener('click', function() {
         lightsPortfolioOn = true;
         lightsContactOn = false;
 
+        hideContentContainer();
+
     } else if(!lightsPortfolioOn) { //if lights to portfolio are off
          // Turn the lights on for 'portfolio'
          lineTopLeft.classList.add('light-up');
@@ -113,6 +132,9 @@ document.getElementById('portfolio').addEventListener('click', function() {
         lightsAboutOn = false;
         lightsPortfolioOn = true;
         lightsContactOn = false;
+
+        hideContentContainer();
+
     } else if (lightsPortfolioOn) { //if lights to portfolio is on
         // Turn the lights off for 'portfolio'
         lineTopLeft.classList.remove('light-up');
@@ -133,6 +155,8 @@ document.getElementById('portfolio').addEventListener('click', function() {
         lightsAboutOn = false;
         lightsPortfolioOn = false;
         lightsContactOn = false;
+
+        showContentContainer();
     }
 });
 
@@ -159,6 +183,9 @@ document.getElementById('contact').addEventListener('click', function() {
         lightsAboutOn = false;
         lightsPortfolioOn = false;
         lightsContactOn = true;
+
+        hideContentContainer();
+
         } else if(!lightsContactOn) { //if lights to contact are off
          // Turn the lights on for 'contact'
          lineTopRight.classList.add('light-up');
@@ -172,6 +199,9 @@ document.getElementById('contact').addEventListener('click', function() {
         lightsAboutOn = false;
         lightsPortfolioOn = false;
         lightsContactOn = true;
+
+        hideContentContainer();
+
     } else if (lightsContactOn) { //if lights to contact are on
         // Turn the lights off for 'contact'
         lineTopRight.classList.remove('light-up');
@@ -193,6 +223,8 @@ document.getElementById('contact').addEventListener('click', function() {
         lightsAboutOn = false;
         lightsPortfolioOn = false;
         lightsContactOn = false;
+
+        showContentContainer();
     }
 });
 
