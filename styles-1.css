@@ -204,6 +204,7 @@ body {
 }
 
 .top-light {
+    cursor: pointer;
     z-index: 10;
     position: absolute;
     top: 0;
