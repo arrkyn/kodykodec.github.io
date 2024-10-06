@@ -100,7 +100,7 @@ body {
 .profile-image {
     border-radius: 13px;
     margin-top: 50px;
-    max-width: 300px;
+    max-width: 280px;
     max-height: 300px; /* Ensures the image doesn't overflow vertically */
 }
 
