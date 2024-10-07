@@ -20,14 +20,6 @@ body {
     /*animation: glow 1s ease-in-out infinite alternate;  a CSS animation for continuous glowing */
   }
 
-  .glass-effect {
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 5px;
-  }
-
-
 .fixed-frame {
     z-index: 1;
     background-color: #000;
@@ -51,37 +43,22 @@ body {
     z-index: 2; /* Ensure it covers the sliding window */
 }
 
-@keyframes tv-static {
-    0% { background-position: 0 0; }
-    100% { background-position: 100% 100%; }
-}
-
-.tv-static-background {
-    border: #25b31b 5px dotted;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 5; /* Ensure it stays behind other content */
-    background: linear-gradient(45deg, rgba(217, 36, 36, 0.783) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent);
-    background-size: 50px 50px; /* Adjust to get the desired wave effect */
-    animation: tv-static 3s linear infinite; /* Smooth, continuous animation */
-    opacity: 0.3; /* Adjust opacity to blend with the content */
-    pointer-events: none; /* Make sure it doesn't interfere with other interactions */
-}
-
 
 #content-container {
-   
-    padding-bottom: 30px;
+    margin-top: 1vh;
+    margin-bottom: 15vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    padding-left: 10px;
+    padding-right: 10px;
     position: absolute;
     top: calc(40% + 60px); /* Center vertically and add margin-top */
     left: 50%;
     transform: translate(-50%, -50%); /* Center horizontally */
-    height: 80%;
+    height: 70%;
     width: 60%; 
-
+    max-height: 80vh;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,6 +66,7 @@ body {
     text-align: center;
     border-radius: 13px;
     background-color: rgba(51, 51, 51, 0.885); 
+    overflow: hidden;
 }
 
 .top-section {
@@ -99,9 +77,10 @@ body {
 
 .profile-image {
     border-radius: 13px;
-    margin-top: 50px;
+    margin-top: 10px;
     max-width: 280px;
     max-height: 280px; /* Ensures the image doesn't overflow vertically */
+   
 }
 
 
@@ -125,10 +104,77 @@ body {
 }
 
 .text-section {
-    font-size: 14px;
-    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+}
+
+#title-text { 
+    margin-top: ;
+    font-family: "Nunito", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    
+    color: #f7f7f7;
+}
+.text-section span {
+    font-size: 1.33rem; 
+  }
+
+#landing-text { 
+    font-size: 1.2rem;
+    font-weight: 600;
     line-height: 1.5;
     color: #f7f7f7;
+}
+
+@media (max-width: 1200px) {
+
+    #content-container {
+        margin-top: 1vh;
+        padding-top: 7vh; 
+        padding-bottom: 5vh; 
+
+    }
+}
+
+@media (max-width: 900px) {
+
+    #content-container {
+        margin-top: 1vh;
+        padding-top: 7vh; 
+        padding-bottom: 5vh; 
+
+    }
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+
+    #content-container {
+        margin-top: 1vh;
+        padding-top: 7vh; 
+        padding-bottom: 5vh; 
+
+    }
+
+    .profile-image {
+        border-radius: 13px;
+        margin-top: 10px;
+        max-width: 280px;
+        max-height: 225px; /* Ensures the image doesn't overflow vertically */
+       
+    }
+    #title-text { 
+        padding-top: 25px;
+        font-size: 1rem; /* Adjusted font size for mobile */
+    }
+
+    .text-section span {
+        font-size: 1rem; /* Adjusted font size for mobile */
+    }
+
+    #landing-text { 
+        font-size: .90rem; /* Adjusted font size for mobile */
+    }
 }
 
 .line-top-left {
@@ -242,9 +288,9 @@ body {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     -webkit-user-select: none; /* Safari */
-    font-family: 'Lato', sans-serif;
     
-    font-size: larger;
+    font-family: "Afacad Flux", sans-serif;
+    font-size:larger;
     color: black;
     display: flex; 
     align-items: center; /* Vertically center the text */
@@ -359,6 +405,7 @@ svg.light path {
 
 .new-window-about {
     font-family: 'Exo', sans-serif;
+    font-size: 1.2rem;
     color: rgb(149, 164, 162);
     z-index: 1;
     position: absolute;
@@ -389,7 +436,8 @@ svg.light path {
 }
 
 .new-window-portfolio {
-    font-family: 'Exo', sans-serif; /* To match the font style */
+    font-family: 'Exo', sans-serif;
+    font-size: 1.2rem;
     color: rgb(149, 164, 162); /* To maintain consistent text color */
     z-index: 1;
     border-radius: 0 0 15px 15px; /* Ensure the syntax is consistent */
@@ -420,7 +468,7 @@ svg.light path {
     top: 10%;
     right: -3%;
     margin-right: 3%;
-    width: calc(50% - 40px);
+    width: calc(50% - 20px);
     color: rgb(149, 164, 162); /* To maintain consistent text color */
     background: rgba(30, 30, 30) radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px); /* Matching background */
     background-size: 13px 13px;
@@ -431,7 +479,8 @@ svg.light path {
 }
 
 .fixed-frame.open-contact .new-window-contact {
-    width: calc(40% - 40px);
+    width: calc(30% - 20px);
+    
     margin-right:  3%;
     transform: translateX(0);
 }
@@ -448,7 +497,7 @@ svg.light path {
 .new-window-contact input[type="text"],
 .new-window-contact input[type="email"],
 .new-window-contact textarea {
-    width: 97%; /* Make textboxes take up the full width of their container */
+    width: 90%; /* Make textboxes take up the full width of their container */
     padding: 10px; /* Add padding inside textboxes */
     margin-left: 5%;
     border: 1px solid #ccc; /* Add a border around textboxes */

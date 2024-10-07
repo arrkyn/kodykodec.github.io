@@ -10,10 +10,20 @@
     }
 
     .fixed-frame.open-contact .new-window-contact {
-        width: calc(90% - 40px);
-        height: calc(60% - 5%);
+        width: calc(90% - 20px);
+        height: calc(70% - 5%);
         margin-right:  3%;
         transform: translateX(0);
+    }
+    
+    .new-window-contact input[type="text"],
+    .new-window-contact input[type="email"],
+    .new-window-contact textarea {
+        width: 85%; /* Make textboxes take up the full width of their container */
+        padding: 13px; /* Add padding inside textboxes */
+        margin-left: 5%;
+        border: 1px solid #ccc; /* Add a border around textboxes */
+        resize: none;
     }
 }
     @media (max-width: 370px) {
@@ -26,6 +36,7 @@
     width: 80px;
      font-size: large;  
         }
+
        
     }
 
@@ -38,6 +49,8 @@
             height: 6%;
     width: 70px;
         }
+       
+
 
     }
 
@@ -51,6 +64,8 @@
     width: 4rem;
      font-size: smaller;  
         }
+
+
        
     }
     
