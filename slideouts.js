@@ -3,6 +3,8 @@ const portfolioBorder = document.getElementById('portfolio');
 const contactBorder = document.getElementById('contact');
 const topLight = document.getElementById('top-light');
 
+showContentContainer();
+
 document.querySelector('.top-light svg').addEventListener('click', function() {
   var fixedFrame = document.querySelector('.fixed-frame');
 
