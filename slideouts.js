@@ -20,7 +20,7 @@ document.querySelector('.top-light svg').addEventListener('click', function() {
       contactBorder.classList.remove('border-light');
       portfolioBorder.classList.remove('border-light');
 
-      //turn the all other lines to those navs 
+      //turn off all lines to those nav buttons
       lineTopLeft.classList.remove('light-up');
       lineTopRight.classList.remove('light-up');
       lineRightVert.classList.remove('light-up');
@@ -41,10 +41,10 @@ document.getElementById('about').addEventListener('click', function() {
   console.log('About clicked'); // Add this line
     var fixedFrame = document.querySelector('.fixed-frame');
     
-    // Check if the about window is already open
+    //check if the about window is already open
     var aboutIsOpen = fixedFrame.classList.contains('open-about');
     
-    // Toggle the about window
+    //toggle the about window
     if (!aboutIsOpen) {
       fixedFrame.classList.add('open-about');
       fixedFrame.classList.remove('open-contact');
@@ -53,6 +53,8 @@ document.getElementById('about').addEventListener('click', function() {
       aboutBorder.classList.add('border-light');
       contactBorder.classList.remove('border-light');
       portfolioBorder.classList.remove('border-light');
+
+      hideContentContainer();
       
     } else {
       fixedFrame.classList.remove('open-about');
@@ -77,6 +79,8 @@ document.getElementById('about').addEventListener('click', function() {
       contactBorder.classList.add('border-light');
       aboutBorder.classList.remove('border-light');
       portfolioBorder.classList.remove('border-light');
+
+      hideContentContainer();
       
     } else {
       fixedFrame.classList.remove('open-contact');
@@ -101,7 +105,7 @@ document.getElementById('about').addEventListener('click', function() {
       aboutBorder.classList.remove('border-light');
       contactBorder.classList.remove('border-light');
       
-      
+      hideContentContainer();
       
     } else {
       fixedFrame.classList.remove('open-portfolio');

@@ -1,9 +1,15 @@
 /* Remove the default triangle */
 summary {
+    text-decoration: underline;
     list-style: none;
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none; /* For Safari */
+    transition: transform 0.2s ease-in-out;
+}
+
+summary:hover {
+    transform: scale(1.1);
 }
 
  .about-ext { 
@@ -30,7 +36,7 @@ details[open] .close-summary::before {
 
 /* Style for the close link */
 .close-summary {
-    color: rgb(43, 86, 61);
+    color:rgb(191, 214, 205);
     cursor: pointer;
     text-decoration: underline;
     display: inline-block;

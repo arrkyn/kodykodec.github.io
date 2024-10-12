@@ -45,8 +45,6 @@ body {
 
 
 #content-container {
-   
-    padding-bottom: 30px;
     position: absolute;
     top: calc(40% + 60px); /* Center vertically and add margin-top */
     left: 50%;
@@ -69,6 +67,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 50px;
+    padding-bottom: 100px;
 }
 
 .profile-image {
@@ -101,15 +101,17 @@ body {
 
 .text-section {
     font-family: "Open Sans", sans-serif;
+    color:rgb(237, 255, 251);
+    
 }
 
 #title-text { 
-    margin-top: ;
+    margin-top: .5rem;
     font-family: "Nunito", sans-serif;
     font-size: 1.6rem;
     font-weight: 600;
     
-    color: #f7f7f7;
+  
 }
 .text-section span {
     font-size: 1.33rem; 
@@ -119,7 +121,7 @@ body {
     font-size: 1.2rem;
     font-weight: 600;
     line-height: 1.5;
-    color: #f7f7f7;
+
 }
 
 @media (max-width: 1200px) {
@@ -382,7 +384,7 @@ svg.light path {
 }
 
 .new-window-about::-webkit-scrollbar {
-    width: .5px;
+    display: none; /* Hide scrollbar */
 }
 
 .new-window-about::-webkit-track {
@@ -390,19 +392,28 @@ svg.light path {
 }
 
 .new-window-portfolio::-webkit-scrollbar {
-    width: .5px;
+    display: none; /* Hide scrollbar */
 }
 
 .new-window-portfolio::-webkit-track {
     background: transparent;
 }
 
+.new-window-contact::-webkit-scrollbar{ 
+    display: none; /* Hide scrollbar */
+}
+
+.new-window-contact::-webkit-track{ 
+    display: none; /* Hide scrollbar */
+}
+
+
 
 
 .new-window-about {
     font-family: 'Exo', sans-serif;
     font-size: 1.2rem;
-    color: rgb(149, 164, 162);
+    color:rgb(191, 214, 205);
     z-index: 1;
     position: absolute;
     top: 11px;
@@ -419,15 +430,15 @@ svg.light path {
     overflow: auto;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-}
-
-
-.fixed-frame.open-about .new-window-about {
     padding-top: 5%;
     top: 11px;
     left: 2px;
     max-height: 89%;
     overflow: scroll;
+}
+
+
+.fixed-frame.open-about .new-window-about {
     transform: translateX(0);
 }
 
@@ -449,11 +460,13 @@ svg.light path {
     overflow: scroll;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Consistent shadow effect */
     box-sizing: border-box; /* Consistent box-sizing */
+    padding-top: 3%;
+    top: 10px;
+
 }
 
 .fixed-frame.open-portfolio .new-window-portfolio {
-    padding-top: 3%;
-    top: 10px;
+   
     transform: translateY(0);
 }
 
@@ -463,9 +476,10 @@ svg.light path {
     position: absolute;
     top: 10%;
     right: -3%;
-    margin-right: 3%;
-    width: calc(50% - 20px);
-    color:rgb(191, 214, 205);  /* To maintain consistent text color */
+    min-width: 300px; /* Ensures the form doesn't get too small */
+    max-width: 400px; /* Limits how wide the form can get */
+    width: 100%; /* Allows it to fill the available width */
+    color:rgb(191, 214, 205); /* To maintain consistent text color */
     background: rgba(30, 30, 30) radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px); /* Matching background */
     background-size: 13px 13px;
     transition: transform 0.5s ease;
@@ -475,9 +489,6 @@ svg.light path {
 }
 
 .fixed-frame.open-contact .new-window-contact {
-    width: calc(30% - 20px);
-    
-    margin-right:  3%;
     transform: translateX(0);
 }
 

@@ -12,11 +12,11 @@ const energyIcon = document.querySelector('svg');
 const contentContainer = document.getElementById('content-container');
 
 function hideContentContainer() {
-    contentContainer.style.display = 'none';
+    contentContainer.classList.remove('show');
 }
 
 function showContentContainer() {
-    contentContainer.style.display = 'flex';
+    contentContainer.classList.add('show');
 }
 
 
