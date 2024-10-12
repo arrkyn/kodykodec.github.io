@@ -45,12 +45,8 @@ body {
 
 
 #content-container {
-    margin-top: 1vh;
-    margin-bottom: 15vh;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    padding-left: 10px;
-    padding-right: 10px;
+   
+    padding-bottom: 30px;
     position: absolute;
     top: calc(40% + 60px); /* Center vertically and add margin-top */
     left: 50%;
@@ -438,7 +434,7 @@ svg.light path {
 .new-window-portfolio {
     font-family: 'Exo', sans-serif;
     font-size: 1.2rem;
-    color: rgb(149, 164, 162); /* To maintain consistent text color */
+    color:rgb(191, 214, 205);  /* To maintain consistent text color */
     z-index: 1;
     border-radius: 0 0 15px 15px; /* Ensure the syntax is consistent */
     position: absolute;
@@ -469,7 +465,7 @@ svg.light path {
     right: -3%;
     margin-right: 3%;
     width: calc(50% - 20px);
-    color: rgb(149, 164, 162); /* To maintain consistent text color */
+    color:rgb(191, 214, 205);  /* To maintain consistent text color */
     background: rgba(30, 30, 30) radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px); /* Matching background */
     background-size: 13px 13px;
     transition: transform 0.5s ease;
@@ -540,12 +536,12 @@ svg.light path {
 }
 
 a {
-    color: rgb(149, 164, 162); /* Default link color */
+    color:rgb(191, 214, 205);  /* Default link color */
     text-decoration: none; /* Remove underline if desired */
 }
 
 a:hover {
-    color: rgb(191, 214, 205); /* Hover link color */
+    color: rgb(204, 232, 222); /* Hover link color */
 }
 
 a.underline {
