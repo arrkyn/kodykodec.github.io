@@ -46,29 +46,32 @@ body {
 
 #content-container {
     position: absolute;
-    top: calc(40% + 60px); /* Center vertically and add margin-top */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center horizontally */
-    height: 70%;
-    width: 60%; 
+    top: 50%; /* Position 50% from the top */
+    left: 50%; /* Position 50% from the left */
+    transform: translate(-50%, -50%); /* Shift back by 50% of the container's width and height */
+    max-width: 65%; 
     max-height: 80vh;
-    overflow-y: auto;
-    display: flex;
+    margin: auto; /* Auto margin centers horizontally in block containers */
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
     border-radius: 13px;
     background-color: rgba(51, 51, 51, 0.885); 
-    overflow: hidden;
+    overflow-x: hidden;
+     padding-bottom: 2rem; /* Normal padding */
+    transition: padding-bottom 0.3s ease;
+}
+
+.no-overflow {
+    padding-bottom: 0.5rem; /* Reduce padding when there's no overflow */
 }
 
 .top-section {
+    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
-    padding-bottom: 100px;
 }
 
 .profile-image {
@@ -76,9 +79,7 @@ body {
     margin-top: 10px;
     max-width: 280px;
     max-height: 280px; /* Ensures the image doesn't overflow vertically */
-   
 }
-
 
 .icons {
     display: flex;
@@ -124,54 +125,72 @@ body {
 
 }
 
+#scroll-indicator {
+    position: sticky;
+    bottom: 10px;
+    left: 90%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: flash 1.5s infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes flash {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+
+
+/* Adjust container width for smaller screens */
 @media (max-width: 1200px) {
-
     #content-container {
-        margin-top: 1vh;
-        padding-top: 7vh; 
-        padding-bottom: 5vh; 
-
+        max-width: 75%; /* Adjusts the width on smaller screens */
+        max-height: 75%;
     }
 }
 
 @media (max-width: 900px) {
-
     #content-container {
-        margin-top: 1vh;
-        padding-top: 7vh; 
-        padding-bottom: 5vh; 
-
+        max-width: 85%; /* Adjust for even smaller screens */
+        max-height: 75%;
+    }
+    #landing-text { 
+        font-size: .90rem;
     }
 }
 
 /* Media Query for Mobile Screens */
 @media (max-width: 768px) {
-
     #content-container {
-        margin-top: 1vh;
-        padding-top: 7vh; 
-        padding-bottom: 5vh; 
-
+        max-width: 90%; /* Fit better on mobile */
     }
 
     .profile-image {
-        border-radius: 13px;
-        margin-top: 10px;
         max-width: 280px;
-        max-height: 225px; /* Ensures the image doesn't overflow vertically */
-       
+        max-height: 225px;
     }
+
     #title-text { 
-        padding-top: 25px;
-        font-size: 1rem; /* Adjusted font size for mobile */
+        font-size: 1rem;
     }
 
     .text-section span {
-        font-size: 1rem; /* Adjusted font size for mobile */
+        font-size: 1rem;
     }
 
     #landing-text { 
-        font-size: .90rem; /* Adjusted font size for mobile */
+        font-size: .90rem;
     }
 }
 
@@ -383,30 +402,22 @@ svg.light path {
     /* Maintain the image's aspect ratio */
 }
 
-.new-window-about::-webkit-scrollbar {
+#content-container::-webkit-scrollbar {
     display: none; /* Hide scrollbar */
 }
 
-.new-window-about::-webkit-track {
-    background: transparent;
+
+.new-window-about::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
 }
 
 .new-window-portfolio::-webkit-scrollbar {
     display: none; /* Hide scrollbar */
 }
 
-.new-window-portfolio::-webkit-track {
-    background: transparent;
-}
-
 .new-window-contact::-webkit-scrollbar{ 
     display: none; /* Hide scrollbar */
 }
-
-.new-window-contact::-webkit-track{ 
-    display: none; /* Hide scrollbar */
-}
-
 
 
 
