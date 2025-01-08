@@ -150,50 +150,6 @@ body {
     }
 }
 
-
-
-/* Adjust container width for smaller screens */
-@media (max-width: 1200px) {
-    #content-container {
-        max-width: 75%; /* Adjusts the width on smaller screens */
-        max-height: 75%;
-    }
-}
-
-@media (max-width: 900px) {
-    #content-container {
-        max-width: 85%; /* Adjust for even smaller screens */
-        max-height: 75%;
-    }
-    #landing-text { 
-        font-size: .90rem;
-    }
-}
-
-/* Media Query for Mobile Screens */
-@media (max-width: 768px) {
-    #content-container {
-        max-width: 90%; /* Fit better on mobile */
-    }
-
-    .profile-image {
-        max-width: 280px;
-        max-height: 225px;
-    }
-
-    #title-text { 
-        font-size: 1rem;
-    }
-
-    .text-section span {
-        font-size: 1rem;
-    }
-
-    #landing-text { 
-        font-size: .90rem;
-    }
-}
-
 .line-top-left {
     position: absolute;
     top: 10px;
@@ -234,19 +190,11 @@ body {
     bottom: 0;
     left: 0;
     height: 2px;
-    width: 100%;
+    width: 30px;
     background-color: rgb(149, 164, 162);
     z-index: 2;
 }
-.line-bottom-left-portfolio {
-    position: absolute;
-    bottom: 0;
-    left: 30px;
-    height: 2px;
-    width: 100%;
-    background-color: rgb(149, 164, 162);
-    z-index: 2;
-}
+
 .line-bottom-right-contact {
     position: absolute;
     bottom: 0;
@@ -300,11 +248,13 @@ body {
       inset: 0;
   }
 
+
 .nav-item {
     user-select: none;
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     -webkit-user-select: none; /* Safari */
+   position: relative;
     
     font-family: "Afacad Flux", sans-serif;
     font-size:larger;
@@ -313,7 +263,7 @@ body {
     align-items: center; /* Vertically center the text */
     justify-content: center;
     height: 7%;
-    width: 90px;
+    width: 110px;
     background-color: rgb(149, 164, 162);
     border-radius: 11px;
     transition: color 0.2s;
@@ -322,23 +272,8 @@ body {
     /* Change cursor to pointer on hover */
 }
 
-#about {
-    z-index: 2;
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
-    margin: auto;
-    
-}
-
-#portfolio {
-    z-index: 2;
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    /* Adjust the left position to 50% */
-    transform: translateX(-50%);
-    /* Center horizontally using translateX */
+.about {
+  left: 500px;
 }
 
 #contact {
@@ -346,7 +281,6 @@ body {
     position: absolute;
     bottom: 30px;
     right: 20px;
-    margin: auto;
 }
 
 
@@ -379,17 +313,7 @@ svg.light path {
 }
 
 
-.portfolio-headers {
-    display: flex;
-    justify-content: center;
-    /* Center horizontally */
-    position: sticky;
-}
 
-.portfolio-headers a {
-    margin: 0 10px;
-    /* Adjust the spacing between links as needed */
-}
 
 /* Style the image */
 .img_3d {
@@ -411,9 +335,6 @@ svg.light path {
     display: none; /* Hide scrollbar */
 }
 
-.new-window-portfolio::-webkit-scrollbar {
-    display: none; /* Hide scrollbar */
-}
 
 .new-window-contact::-webkit-scrollbar{ 
     display: none; /* Hide scrollbar */
@@ -427,8 +348,6 @@ svg.light path {
     color:rgb(191, 214, 205);
     z-index: 1;
     position: absolute;
-    top: 11px;
-    left: 0;
     width: calc(100% - 40px);
     max-height: 91%;
     background: rgba(30, 30, 30) radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
@@ -442,7 +361,7 @@ svg.light path {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     padding-top: 5%;
-    top: 11px;
+    top: 81px;
     left: 2px;
     max-height: 89%;
     overflow: scroll;
@@ -453,33 +372,7 @@ svg.light path {
     transform: translateX(0);
 }
 
-.new-window-portfolio {
-    font-family: 'Exo', sans-serif;
-    font-size: 1.2rem;
-    color:rgb(191, 214, 205);  /* To maintain consistent text color */
-    z-index: 1;
-    border-radius: 0 0 15px 15px; /* Ensure the syntax is consistent */
-    position: absolute;
-    top: -20px; 
-    left: 2%;
-    width: 96%;
-    height: 90%;
-    background: rgba(30, 30, 30) radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px); /* Matching background */
-    background-size: 13px 13px;
-    transition: transform 0.5s ease;
-    transform: translateY(calc(-100% - 10px));
-    overflow: scroll;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Consistent shadow effect */
-    box-sizing: border-box; /* Consistent box-sizing */
-    padding-top: 3%;
-    top: 10px;
 
-}
-
-.fixed-frame.open-portfolio .new-window-portfolio {
-   
-    transform: translateY(0);
-}
 
 .new-window-contact {
     z-index: 1;
@@ -544,18 +437,7 @@ svg.light path {
     border-radius: 3px;
 }
 
-.portfolio-headers { 
-    position: sticky;
-    top: -40px;
-    background: rgba(30, 30, 30) radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 13px 13px;
-    padding: 10px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    width: 60%; /* Adjust width as needed for the desired boxed look */
-    margin: 0 auto; /* Center the header horizontally */
-    border-radius: 10px; /* Optional: rounded corners */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle border */
-}
+
 
 a {
     color:rgb(191, 214, 205);  /* Default link color */

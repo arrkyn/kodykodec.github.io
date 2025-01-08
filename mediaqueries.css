@@ -15,7 +15,50 @@
         border: 1px solid #ccc; /* Add a border around textboxes */
         resize: none;
     }
+
+    /* Adjust container width for smaller screens */
+@media (max-width: 1200px) {
+    #content-container {
+        max-width: 75%; /* Adjusts the width on smaller screens */
+        max-height: 75%;
+    }
 }
+
+@media (max-width: 900px) {
+    #content-container {
+        max-width: 85%; /* Adjust for even smaller screens */
+        max-height: 75%;
+    }
+    #landing-text { 
+        font-size: .90rem;
+    }
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+    #content-container {
+        max-width: 90%; /* Fit better on mobile */
+    }
+
+    .profile-image {
+        max-width: 280px;
+        max-height: 225px;
+    }
+
+    #title-text { 
+        font-size: 1rem;
+    }
+
+    .text-section span {
+        font-size: 1rem;
+    }
+
+    #landing-text { 
+        font-size: .90rem;
+    }
+}
+
+
     @media (max-width: 370px) {
         body {
             width: 100%; /* Make the body width 100% to fit smaller screens */
