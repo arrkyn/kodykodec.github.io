@@ -1,6 +1,6 @@
-const aboutBorder = document.getElementById('about');
-const contactBorder = document.getElementById('contact');
-const topLight = document.getElementById('top-light');
+const aboutBorder = document.querySelector('about');
+const contactBorder = document.getElementsByClassName('contact');
+const topLight = document.getElementsByClassName('top-light');
 
 showContentContainer();
 
@@ -38,7 +38,7 @@ document.querySelector('.top-light svg').addEventListener('click', function() {
 });
 
 
-document.getElementById('about').addEventListener('click', function() {
+document.getElementsByClassName('about').addEventListener('click', function() {
   console.log('About clicked'); // Add this line
     var fixedFrame = document.querySelector('.fixed-frame');
     

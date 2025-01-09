@@ -190,7 +190,7 @@ body {
     bottom: 0;
     left: 0;
     height: 2px;
-    width: 30px;
+    width: 190px;
     background-color: rgb(149, 164, 162);
     z-index: 2;
 }
@@ -200,19 +200,11 @@ body {
     bottom: 0;
     right: 0;
     height: 2px;
-    width: 30px;
+    width: 50px;
     background-color: rgb(149, 164, 162);
     z-index: 2;
 }
-.line-bottom-right-free {
-    position: absolute;
-    bottom: 0;
-    right: 30px;
-    height: 2px;
-    width: 50%;
-    background-color: #000;
-    z-index: 2;
-}
+
 
 .top-light {
     cursor: pointer;
@@ -273,14 +265,45 @@ body {
 }
 
 .about {
-  left: 500px;
+    user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    -webkit-user-select: none; /* Safari */
+    transition: color 0.2s;
+    /* Smooth color transition on hover */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 190px;
+    font-family: "Afacad Flux", sans-serif;
+    font-size:larger;
+    color: black;
+    display: flex; 
+    align-items: center; /* Vertically center the text */
+    justify-content: center;
+    height: 7%;
+    width: 110px;
+    background-color: rgb(149, 164, 162);
+    border-radius: 11px;
 }
 
-#contact {
+.contact {
     z-index: 2;
     position: absolute;
-    bottom: 30px;
-    right: 20px;
+    bottom: 0;
+    right: 50px;
+    font-family: "Afacad Flux", sans-serif;
+    font-size:larger;
+    color: black;
+    display: flex; 
+    align-items: center; /* Vertically center the text */
+    justify-content: center;
+    height: 7%;
+    width: 110px;
+    background-color: rgb(149, 164, 162);
+    border-radius: 11px;
 }
 
 
