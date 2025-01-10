@@ -22,12 +22,11 @@ function showContentContainer() {
 
 // Initialize variables to track the state of the lights for each nav item
 let lightsAboutOn = false;
-let lightsPortfolioOn = false;
 let lightsContactOn = false;
 
 document.getElementById('about').addEventListener('click', function() {
 
-    if(lightsPortfolioOn || lightsContactOn) { //if any other lights are on
+    if(lightsContactOn) { //if any other lights are on
         // turn off all other lights other than 'about'
         lineBottomLeftPortfolio.classList.remove('light-up');
         lineBottomRightContact.classList.remove('light-up');
@@ -45,7 +44,6 @@ document.getElementById('about').addEventListener('click', function() {
        
         //trigger booleans 
         lightsAboutOn = true;
-        lightsPortfolioOn = false;
         lightsContactOn = false;
 
         hideContentContainer();
@@ -61,7 +59,6 @@ document.getElementById('about').addEventListener('click', function() {
 
         //trigger booleans 
         lightsAboutOn = true;
-        lightsPortfolioOn = false;
         lightsContactOn = false;
 
         hideContentContainer();
@@ -86,74 +83,6 @@ document.getElementById('about').addEventListener('click', function() {
     
         // Reset the state of lights for other nav items
         lightsAboutOn = false;
-        lightsPortfolioOn = false;
-        lightsContactOn = false;
-
-        showContentContainer();
-    }
-});
-
-document.getElementById('portfolio').addEventListener('click', function() {
-
-    if(lightsAboutOn || lightsContactOn) { //if any other lights are on
-        // turn off all other lights other than 'portfolio'
-        lineBottomRightContact.classList.remove('light-up');
-        //turn the all other lines to those navs 
-        lineTopRight.classList.remove('light-up');
-        lineRightVert.classList.remove('light-up');
-        lineBottomRightContact.classList.remove('light-up');
-        //turn on lights to 'portfolio'
-        lineTopLeft.classList.add('light-up');
-        lineLeftVert.classList.add('light-up');
-        lineBottomLeftAbout.classList.add('light-up');
-        lineBottomLeftPortfolio.classList.add('light-up');
-
-          //turn on battery
-          energyIcon.classList.add('light');
-
-        //trigger booleans 
-        lightsAboutOn = false;
-        lightsPortfolioOn = true;
-        lightsContactOn = false;
-
-        hideContentContainer();
-
-    } else if(!lightsPortfolioOn) { //if lights to portfolio are off
-         // Turn the lights on for 'portfolio'
-         lineTopLeft.classList.add('light-up');
-         lineLeftVert.classList.add('light-up');
-         lineBottomLeftAbout.classList.add('light-up');
-         lineBottomLeftPortfolio.classList.add('light-up');
-
-           //turn on battery
-           energyIcon.classList.add('light');
-
-        //trigger booleans 
-        lightsAboutOn = false;
-        lightsPortfolioOn = true;
-        lightsContactOn = false;
-
-        hideContentContainer();
-
-    } else if (lightsPortfolioOn) { //if lights to portfolio is on
-        // Turn the lights off for 'portfolio'
-        lineTopLeft.classList.remove('light-up');
-        lineLeftVert.classList.remove('light-up');
-        lineBottomLeftAbout.classList.remove('light-up');
-        lineBottomLeftPortfolio.classList.remove('light-up');
-        //turn all other lights to navs
-        lineBottomRightContact.classList.remove('light-up');
-        //turn the all other lines to those navs 
-        lineTopRight.classList.remove('light-up');
-        lineRightVert.classList.remove('light-up');
-        lineBottomRightContact.classList.remove('light-up');
-
-        //turn off battery
-        energyIcon.classList.remove('light');
-    
-        // Reset the state of lights for other nav items
-        lightsAboutOn = false;
-        lightsPortfolioOn = false;
         lightsContactOn = false;
 
         showContentContainer();
@@ -162,7 +91,7 @@ document.getElementById('portfolio').addEventListener('click', function() {
 
 document.getElementById('contact').addEventListener('click', function() {
 
-    if(lightsAboutOn || lightsPortfolioOn) { //if any other lights are on
+    if(lightsAboutOn) { //if any other lights are on
         // turn off all other lights other than 'contact'
         lineBottomLeftAbout.classList.remove('light-up');
         lineBottomLeftPortfolio.classList.remove('light-up');
@@ -197,7 +126,6 @@ document.getElementById('contact').addEventListener('click', function() {
 
         //trigger booleans 
         lightsAboutOn = false;
-        lightsPortfolioOn = false;
         lightsContactOn = true;
 
         hideContentContainer();

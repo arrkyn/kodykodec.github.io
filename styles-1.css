@@ -10,8 +10,6 @@ body {
 
 .frame-wrapper {
     position: fixed;
-    inset: 0;
-    margin: auto;
     height: min-content;
     width: 800px;
     min-width: 60%;
@@ -194,6 +192,7 @@ body {
     }
 }
 
+
 .line-top-left {
     position: absolute;
     top: 10px;
@@ -234,35 +233,16 @@ body {
     bottom: 0;
     left: 0;
     height: 2px;
-    width: 100%;
-    background-color: rgb(149, 164, 162);
+    background-color:rgb(149, 164, 162);
     z-index: 2;
 }
-.line-bottom-left-portfolio {
-    position: absolute;
-    bottom: 0;
-    left: 30px;
-    height: 2px;
-    width: 100%;
-    background-color: rgb(149, 164, 162);
-    z-index: 2;
-}
+
 .line-bottom-right-contact {
     position: absolute;
     bottom: 0;
     right: 0;
     height: 2px;
-    width: 30px;
-    background-color: rgb(149, 164, 162);
-    z-index: 2;
-}
-.line-bottom-right-free {
-    position: absolute;
-    bottom: 0;
-    right: 30px;
-    height: 2px;
-    width: 50%;
-    background-color: #000;
+    background-color:rgb(149, 164, 162);
     z-index: 2;
 }
 
@@ -300,14 +280,18 @@ body {
       inset: 0;
   }
 
-.nav-item {
+
+#about {
+    position: absolute;
+    right: 65%;
+
     user-select: none;
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     -webkit-user-select: none; /* Safari */
     
     font-family: "Afacad Flux", sans-serif;
-    font-size:larger;
+    font-size: larger;
     color: black;
     display: flex; 
     align-items: center; /* Vertically center the text */
@@ -319,34 +303,31 @@ body {
     transition: color 0.2s;
     /* Smooth color transition on hover */
     cursor: pointer;
-    /* Change cursor to pointer on hover */
 }
 
-#about {
-    z-index: 2;
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
-    margin: auto;
-    
-}
-
-#portfolio {
-    z-index: 2;
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    /* Adjust the left position to 50% */
-    transform: translateX(-50%);
-    /* Center horizontally using translateX */
-}
 
 #contact {
-    z-index: 2;
     position: absolute;
-    bottom: 30px;
-    right: 20px;
-    margin: auto;
+    left:65%;
+
+    user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    -webkit-user-select: none; /* Safari */
+    
+    font-family: "Afacad Flux", sans-serif;
+    font-size: larger;
+    color: black;
+    display: flex; 
+    align-items: center; /* Vertically center the text */
+    justify-content: center;
+    height: 7%;
+    width: 90px;
+    background-color: rgb(149, 164, 162);
+    border-radius: 11px;
+    transition: color 0.2s;
+    /* Smooth color transition on hover */
+    cursor: pointer;
 }
 
 

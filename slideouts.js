@@ -1,5 +1,4 @@
 const aboutBorder = document.getElementById('about');
-const portfolioBorder = document.getElementById('portfolio');
 const contactBorder = document.getElementById('contact');
 const topLight = document.getElementById('top-light');
 
@@ -9,18 +8,15 @@ document.querySelector('.top-light svg').addEventListener('click', function() {
   var fixedFrame = document.querySelector('.fixed-frame');
 
   var aboutIsOpen = fixedFrame.classList.contains('open-about');
-  var portfolioIsOpen = fixedFrame.classList.contains('open-portfolio');
   var contactIsOpen = fixedFrame.classList.contains('open-contact');
 
   if (aboutIsOpen || portfolioIsOpen || contactIsOpen) {
 
       fixedFrame.classList.remove('open-about');
       fixedFrame.classList.remove('open-contact');
-      fixedFrame.classList.remove('open-portfolio');
 
       aboutBorder.classList.remove('border-light');
       contactBorder.classList.remove('border-light');
-      portfolioBorder.classList.remove('border-light');
 
       //turn off all lines to those nav buttons
       lineTopLeft.classList.remove('light-up');
@@ -50,11 +46,11 @@ document.getElementById('about').addEventListener('click', function() {
     if (!aboutIsOpen) {
       fixedFrame.classList.add('open-about');
       fixedFrame.classList.remove('open-contact');
-      fixedFrame.classList.remove('open-portfolio');
+  
 
       aboutBorder.classList.add('border-light');
       contactBorder.classList.remove('border-light');
-      portfolioBorder.classList.remove('border-light');
+      
 
       hideContentContainer();
       
@@ -76,11 +72,11 @@ document.getElementById('about').addEventListener('click', function() {
     if (!contactIsOpen) {
       fixedFrame.classList.add('open-contact');
       fixedFrame.classList.remove('open-about');
-      fixedFrame.classList.remove('open-portfolio');
+     
 
       contactBorder.classList.add('border-light');
       aboutBorder.classList.remove('border-light');
-      portfolioBorder.classList.remove('border-light');
+     
 
       hideContentContainer();
       
