@@ -4,7 +4,6 @@ const lineTopRight = document.querySelector('.line-top-right');
 const lineLeftVert = document.querySelector('.line-left-vert');
 const lineRightVert = document.querySelector('.line-right-vert');
 const lineBottomLeftAbout = document.querySelector('.line-bottom-left-about');
-const lineBottomLeftPortfolio = document.querySelector('.line-bottom-left-portfolio');
 const lineBottomRightContact = document.querySelector('.line-bottom-right-contact');
 
 const energyIcon = document.querySelector('svg');
@@ -28,7 +27,6 @@ document.getElementById('about').addEventListener('click', function() {
 
     if(lightsContactOn) { //if any other lights are on
         // turn off all other lights other than 'about'
-        lineBottomLeftPortfolio.classList.remove('light-up');
         lineBottomRightContact.classList.remove('light-up');
         //turn the all other lines to those navs 
         lineTopRight.classList.remove('light-up');
@@ -70,13 +68,11 @@ document.getElementById('about').addEventListener('click', function() {
         lineBottomLeftAbout.classList.remove('light-up');
 
         //turn all other lights to navs
-        lineBottomLeftPortfolio.classList.remove('light-up');
         lineBottomRightContact.classList.remove('light-up');
         //turn the all other lines to those navs 
         lineTopRight.classList.remove('light-up');
         lineRightVert.classList.remove('light-up');
         lineBottomRightContact.classList.remove('light-up');
-        lineBottomLeftPortfolio.classList.remove('light-up');
 
          //turn off battery
          energyIcon.classList.remove('light');
@@ -94,12 +90,10 @@ document.getElementById('contact').addEventListener('click', function() {
     if(lightsAboutOn) { //if any other lights are on
         // turn off all other lights other than 'contact'
         lineBottomLeftAbout.classList.remove('light-up');
-        lineBottomLeftPortfolio.classList.remove('light-up');
         //turn the all other lines to those navs 
         lineTopLeft.classList.remove('light-up');
         lineLeftVert.classList.remove('light-up');
         lineBottomLeftAbout.classList.remove('light-up');
-        lineBottomLeftPortfolio.classList.remove('light-up');
         //turn on lights to 'contact'
         lineTopRight.classList.add('light-up');
         lineRightVert.classList.add('light-up');
@@ -110,7 +104,6 @@ document.getElementById('contact').addEventListener('click', function() {
 
         //trigger booleans 
         lightsAboutOn = false;
-        lightsPortfolioOn = false;
         lightsContactOn = true;
 
         hideContentContainer();
@@ -136,20 +129,17 @@ document.getElementById('contact').addEventListener('click', function() {
         lineRightVert.classList.remove('light-up');
         lineBottomRightContact.classList.remove('light-up');
         //turn all other lights to navs
-        lineBottomLeftPortfolio.classList.remove('light-up');
         lineBottomLeftAbout.classList.remove('light-up');
         //turn the all other lines to those navs 
         lineTopLeft.classList.remove('light-up');
         lineLeftVert.classList.remove('light-up');
         lineBottomLeftAbout.classList.remove('light-up');
-        lineBottomLeftPortfolio.classList.remove('light-up');
 
          //turn off battery
          energyIcon.classList.remove('light');
     
         // Reset the state of lights for other nav items
         lightsAboutOn = false;
-        lightsPortfolioOn = false;
         lightsContactOn = false;
 
         showContentContainer();
