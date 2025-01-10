@@ -8,6 +8,17 @@ body {
 }
 
 
+.frame-wrapper {
+    position: fixed;
+    height: min-content;
+    width: 800px;
+    height: 900px;
+    min-width: 60%;
+    clip-path: inset(10px 0 0 0); /* Clip only the bottom, left, and right */
+    overflow: visible; /* Allow the top-light to extend above */
+     /* transparent border to create space for the glow */
+    /*animation: glow 1s ease-in-out infinite alternate;  a CSS animation for continuous glowing */
+  }
 
 .fixed-frame {
     z-index: 1;
@@ -15,13 +26,12 @@ body {
     position: fixed;
     inset: 0;
     margin: auto;
-    top: 10;
+    top: 10px;
     height: 900px;
     width: 800px;
     min-width: 60%;
     overflow: hidden;
     -webkit-transform: translateZ(0);
-    padding-top: 20px; /* Add space at the top */
 }
 
 
@@ -233,6 +243,7 @@ body {
     cursor: pointer;
     z-index: 10;
     position: absolute;
+    top: -3px;
     left: 50%;
     transform: translate(-50%, -100%); /* Move it above the frame */
     width: 50px;
