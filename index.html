@@ -64,16 +64,19 @@
         <div class="top-section">
           <div class="text-section" id="title-text">RJ "Kody" Dell'Aquila<br><span>Designer & Software Developer</span>
           </div>
+        
           <img src="img/me-bio.png" alt="Profile Picture" class="profile-image">
           <div class="icons">
-            <a href="https://github.com/kodykodec" target="_blank">
-              <img src="img\github-logo-nobackground.png" alt="GitHub">
-            </a> <span |> </span>
-            <a href="https://www.linkedin.com/in/rj-dell-aquila-30607596/" target="_blank">
-              <img src="img\linkedin-logo-nobackground.png" alt="LinkedIn">
+            <a href="https://github.com/kodykodec" target="_blank" class="icon">
+                <img src="img/github-logo-nobackground.png" alt="GitHub">
             </a>
-            
-          </div>
+            <span> </span>
+            <a href="https://www.linkedin.com/in/rj-dell-aquila-30607596/" target="_blank" class="icon">
+                <img src="img/linkedin-logo-nobackground.png" alt="LinkedIn">
+            </a>
+        </div>
+      
+        
 
           <div class="text-section" id="landing-text">
             <p>Welcome to my landing page that I hand-coded in vanilla HTML, CSS and some Javascript.
@@ -171,22 +174,33 @@
       <div class="new-window-contact">
         <iframe name="submit-iframe" style="display: none;"></iframe>
         <div class="content-contactForm" id="contactForm">
+            <form action="https://formspree.io/f/xbjvqaey" method="POST" target="submit-iframe">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+    
+                <button type="submit">Send</button>
+    <div class="form-icons"> 
+                <a href="https://www.linkedin.com/in/rj-dell-aquila-30607596/" target="_blank" class="icon">
+                    <img src="img/linkedin-logo-nobackground.png" alt="LinkedIn">
+                </a>
+    
+                <a href="https://github.com/kodykodec" target="_blank" class="icon">
+                    <img src="img/github-logo-nobackground.png" alt="GitHub">
+                </a>
+            </div>
 
-          <form action="https://formspree.io/f/xbjvqaey" method="POST" target="submit-iframe">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <br>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Send</button>
-          </form>
-
+            </form>
+    
+        
         </div>
-      </div>
+    </div>
+    
 
       <div id="success-toast" style="display: none;">
         <p class="toast-email-sent">Thank you! Message sent!</p>
@@ -216,5 +230,6 @@
 <script src="backgroundfx.js"></script>
 <script src="arrow-overflow.js"></script>
 <script src="test-line-resize.js"></script>
+<script src="icons-shine.js"></script>
 
 </html>

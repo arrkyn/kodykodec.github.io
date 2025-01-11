@@ -76,24 +76,67 @@ body {
     max-height: 280px; /* Ensures the image doesn't overflow vertically */
 }
 
+/* Styling the container of icons */
 .icons {
     display: flex;
     gap: 10px;
-    top: 20px;
+    align-items: center;
+    position: relative;
 }
 
-.icons img {
+/* Base styles for images */
+.icon img {
     display: block;
-    border-radius: 25px;
-   overflow: hidden;
+    border-radius: 10px;
+    overflow: hidden;
     width: 100px;
     height: 60px;
-    transition: transform 0.2s ease-in-out;
+    position: relative;
+    transition: transform 0.2s ease-in-out; /* For hover scaling */
 }
 
-.icons img:hover {
-    transform: scale(1.1);
+/* Hover effect */
+.icon img:hover {
+    transform: scale(1.1); /* Slight zoom-in on hover */
 }
+
+/* Shining effect pseudo-element */
+.icon img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg); /* Slanted shine effect */
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Active shine effect */
+.icon img.shining::after {
+    opacity: 1; /* Make the shine visible */
+    animation: shine 2s linear; /* Animate the shine */
+}
+
+/* Keyframes for shine effect */
+@keyframes shine {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
 
 .text-section {
     font-family: "Open Sans", sans-serif;
@@ -456,33 +499,7 @@ svg.light path {
     transform: translateX(0);
 }
 
-.new-window-portfolio {
-    font-family: 'Exo', sans-serif;
-    font-size: 1.2rem;
-    color:rgb(191, 214, 205);  /* To maintain consistent text color */
-    z-index: 1;
-    border-radius: 0 0 15px 15px; /* Ensure the syntax is consistent */
-    position: absolute;
-    top: -20px; 
-    left: 2%;
-    width: 96%;
-    height: 90%;
-    background: rgba(30, 30, 30) radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px); /* Matching background */
-    background-size: 13px 13px;
-    transition: transform 0.5s ease;
-    transform: translateY(calc(-100% - 10px));
-    overflow: scroll;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Consistent shadow effect */
-    box-sizing: border-box; /* Consistent box-sizing */
-    padding-top: 3%;
-    top: 10px;
 
-}
-
-.fixed-frame.open-portfolio .new-window-portfolio {
-   
-    transform: translateY(0);
-}
 
 .new-window-contact {
     z-index: 1;
@@ -499,6 +516,7 @@ svg.light path {
     transition: transform 0.5s ease;
     transform: translateX(100%);
     overflow: hidden;
+    
    
 }
 
@@ -524,22 +542,26 @@ svg.light path {
     border: 1px solid #ccc; /* Add a border around textboxes */
     resize: none;
 }
-    #message { 
-        padding-top: 0px;
-    }
 
-
-.new-window-contact button {
-    position: relative;
-    background-color: rgb(149, 164, 162);
-    color: white; 
-    padding: 10px 20px; 
-    margin-top: 3%;
-    margin-left: 10%;
-    border: none; 
-    border-radius: 3px;
-    cursor: pointer; 
+#name, #email, #message { 
+    width: 99%;
 }
+ 
+
+    .new-window-contact button {
+        position: relative;
+        background-color: rgb(149, 164, 162);
+        color: white;
+        padding: 10px 20px;
+        margin-top: 3%;
+        width: auto; /* Let the button take its natural width */
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    
+        /* Calculate the left margin dynamically to center the button */
+        left: calc(10%); /* 50% of the container's width minus half the button's width (adjust 50px as needed) */
+    }
 
 
 .new-window-contact button:hover {
@@ -573,6 +595,32 @@ a.underline {
     text-decoration: underline; /* Always underlined */
 }
 
+/* Ensure the container uses flexbox */
+.form-icons {
+    margin-left: 9%;
+    display: flex;
+    justify-content: space-between; /* Center the icons horizontally */
+    align-items: center; /* Center the icons vertically */
+    gap: 20px; /* Add spacing between the icons */
+    position: relative; /* Allow icons to scale and move with the container */
+    width: 100%; /* Make the container take up full width */
+    padding-bottom: 20px; /* Space from the bottom */
+}
+
+/* Prevent icons from scaling */
+.form-icons .icon img {
+    width: 100px;  /* Set a fixed width */
+    height: 100px; /* Set a fixed height */
+    object-fit: contain; /* Ensure the image fits within the dimensions */
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+/* Optional: Add hover effects */
+.icon img:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
 
    
 .content-contactForm {
@@ -581,8 +629,10 @@ a.underline {
     font-size: 1.5rem;
     justify-content: flex-start
 }
+
+
 .content-contactForm-label {
-    margin: 0 3%;
+    margin: 0 15%;
 }
 
 .new-window .content {
