@@ -272,21 +272,6 @@ body {
     z-index: 3;
 }
 
-.top-light {
-    /* Keep the existing styles */
-    cursor: pointer;
-    width: 50px;
-    height: 20px;
-    background-color: black;
-    border: 3px solid rgb(149, 164, 162);
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
 
   svg {
     height: 40px;
@@ -375,12 +360,23 @@ svg.light path {
     fill: rgb(237, 255, 251); /* Light color */
 }
 
+.border-button{
+    border: 3px solid rgb(237, 255, 251) !important;
+    background-color: rgb(149, 164, 162) !important;
+    color: black !important;
+}
+
+.top-light-outline { 
+    border: 3px solid rgb(237, 255, 251);
+    background-color: rgb(149, 164, 162)
+}
+
 
 
 .border-light {
     background-color: rgb(122, 182, 166);
     background-color: rgb(195, 218, 213);
-    border: 2px solid rgb(237, 255, 251);
+    border: 3px solid rgb(237, 255, 251);
     box-shadow: 0 0 10px #ffffff; 
    
 }

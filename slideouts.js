@@ -1,6 +1,7 @@
 const aboutBorder = document.getElementById('about');
 const contactBorder = document.getElementById('contact');
-const topLight = document.getElementById('top-light');
+const topLight = document.querySelector('.top-light');
+
 
 showContentContainer();
 
@@ -15,8 +16,9 @@ document.querySelector('.top-light svg').addEventListener('click', function() {
       fixedFrame.classList.remove('open-about');
       fixedFrame.classList.remove('open-contact');
 
-      aboutBorder.classList.remove('border-light');
-      contactBorder.classList.remove('border-light');
+      aboutBorder.classList.remove('border-button');
+      contactBorder.classList.remove('border-button');
+      topLight.classList.remove("top-light-outline");
 
       //turn off all lines to those nav buttons
       lineTopLeft.classList.remove('light-up');
@@ -47,16 +49,18 @@ document.getElementById('about').addEventListener('click', function() {
       fixedFrame.classList.remove('open-contact');
   
 
-      aboutBorder.classList.add('border-light');
-      contactBorder.classList.remove('border-light');
+      aboutBorder.classList.add('border-button');
+      contactBorder.classList.remove('border-button');
+      topLight.classList.add('top-light-outline'); 
+
       
 
       hideContentContainer();
       
     } else {
       fixedFrame.classList.remove('open-about');
-
-      aboutBorder.classList.remove('border-light');
+      topLight.classList.remove('top-light-outline'); 
+      aboutBorder.classList.remove('border-button');
       
     }
   });
@@ -73,16 +77,17 @@ document.getElementById('about').addEventListener('click', function() {
       fixedFrame.classList.remove('open-about');
      
 
-      contactBorder.classList.add('border-light');
-      aboutBorder.classList.remove('border-light');
+      contactBorder.classList.add('border-button');
+      aboutBorder.classList.remove('border-button');
+      topLight.classList.add('top-light-outline'); 
      
 
       hideContentContainer();
       
     } else {
       fixedFrame.classList.remove('open-contact');
-
-      contactBorder.classList.remove('border-light');
+      contactBorder.classList.remove('border-button');
+      topLight.classList.remove('top-light-outline'); 
     }
   });
 
