@@ -1,137 +1,147 @@
 
-    .fixed-frame.open-contact .new-window-contact {
-        width: calc(90% - 20px);
-        height: calc(70% - 5%);
-        margin-right:  3%;
-        transform: translateX(0);
-    }
-    
-    .new-window-contact input[type="text"],
-    .new-window-contact input[type="email"],
-    .new-window-contact textarea {
-        width: 85%; /* Make textboxes take up the full width of their container */
-        padding: 13px; /* Add padding inside textboxes */
-        margin-left: 5%;
-        border: 1px solid #ccc; /* Add a border around textboxes */
-        resize: none;
+ /* Adjust container width for smaller screens */
+@media (max-width: 1200px) {
+    #content-container {
+        max-width: 75%; /* Adjusts the width on smaller screens */
+        max-height: 75%;
     }
 }
-    @media (max-width: 370px) {
-        body {
-            width: 100%; /* Make the body width 100% to fit smaller screens */
-        }
 
-        .nav-item { 
-            height: 6%;
-    width: 80px;
-     font-size: large;  
-        }
-
-       
+@media (max-width: 900px) {
+    #content-container {
+        max-width: 85%; /* Adjust for even smaller screens */
+        max-height: 75%;
     }
 
-    @media (max-width: 300px) {
-        body {
-            width: 100%; /* Make the body width 100% to fit smaller screens */
-        }
+    #landing-text { 
+        font-size: .90rem;
+    }
+}
 
-        .nav-item { 
-            height: 6%;
-    width: 70px;
-        }
-       
-
-
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+    #content-container {
+        max-width: 90%; /* Fit better on mobile */
     }
 
-    @media (max-width: 270px) {
-        body {
-            width: 100%; /* Make the body width 100% to fit smaller screens */
-        }
-
-        .nav-item { 
-            height: 6%;
-    width: 4rem;
-     font-size: smaller;  
-        }
-
-
-       
-    }
-    
-    .frame-wrapper { 
-        position: fixed;
-        inset: 0;
-        margin: auto;
-        height: 96%;
-        width: 95%;
-        min-width: 60%;
+    .profile-image {
+        max-width: 280px;
+        max-height: 225px;
     }
 
-    .new-window-contact {
-        height: 70%;
+    #title-text { 
+        font-size: 1rem;
     }
 
-    .portfolio-headers { 
-        top: -30px;
-        padding-top: 10px;
+    .text-section span {
+        font-size: 1rem;
     }
 
-    .top-light  { 
-    top:23px;
+    #landing-text { 
+        font-size: .90rem;
+    }
+}
+
+/* Small screen adjustments */
+@media (max-width: 370px) {
+    body {
+        width: 100%; /* Make the body width 100% to fit smaller screens */
+    }
+
+    .nav-item { 
+        height: 6%;
+        width: 80px;
+        font-size: large;  
+    }
+}
+
+@media (max-width: 300px) {
+    body {
+        width: 100%; /* Make the body width 100% to fit smaller screens */
+    }
+
+    .nav-item { 
+        height: 6%;
+        width: 70px;
+    }
+}
+
+@media (max-width: 270px) {
+    body {
+        width: 100%; /* Make the body width 100% to fit smaller screens */
+    }
+
+    .nav-item { 
+        height: 6%;
+        width: 4rem;
+        font-size: smaller;  
+    }
+}
+
+/* Fixed frame and window styles */
+.frame-wrapper { 
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    height: 96%;
+    width: 95%;
+    min-width: 60%;
+}
+
+.new-window-contact {
+    height: 70%;
+    width: 75%; /* Adjust width for better responsiveness */
+}
+
+.portfolio-headers { 
+    top: -30px;
+    padding-top: 10px;
+}
+
+.top-light { 
+    top: 23px;
     width: 45px;
     height: 20px;
-    }
+}
 
-    #about {
-        z-index: 2;
-        position: absolute;
-        bottom: 0;
-        left: 20px;
-        margin: auto;
-        
-    }
-    
-    #portfolio {
-        z-index: 2;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        /* Adjust the left position to 50% */
-        transform: translateX(-50%);
-        /* Center horizontally using translateX */
-    }
-    
-    #contact {
-        z-index: 2;
-        position: absolute;
-        bottom: 0;
-        right: 20px;
-        margin: auto;
-    }
+/* About, Portfolio, and Contact button adjustments */
+#about {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    margin: auto;
+}
 
-    .fixed-frame { 
-        position: fixed;
-        inset: 0;
-        margin: auto;
-        height: 90%;
-        width: 95%;
-        min-width: 60%;
-        
-    }
+#portfolio {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-    .new-window-contact {
-        width: 75%;
-    }
+#contact {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    margin: auto;
+}
 
-    
-    .extended-about-me {
-        text-align: left; /* Change to center or left to avoid justification gaps */
-    }
+/* Fixed frame for the contact form */
+.fixed-frame { 
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    height: 90%;
+    width: 95%;
+    min-width: 60%;
+}
 
-    .extended-about-me {
-        word-wrap: break-word; /* Ensure words break correctly */
-        hyphens: auto; /* Add hyphenation where necessary */
-    }
-    
-
+/* Extended About Me Styles */
+.extended-about-me {
+    text-align: left; /* Change to center or left to avoid justification gaps */
+    word-wrap: break-word; /* Ensure words break correctly */
+    hyphens: auto; /* Add hyphenation where necessary */
+}

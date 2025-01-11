@@ -193,51 +193,6 @@ body {
     }
 }
 
-
-
-/* Adjust container width for smaller screens */
-@media (max-width: 1200px) {
-    #content-container {
-        max-width: 75%; /* Adjusts the width on smaller screens */
-        max-height: 75%;
-    }
-}
-
-@media (max-width: 900px) {
-    #content-container {
-        max-width: 85%; /* Adjust for even smaller screens */
-        max-height: 75%;
-    }
-    #landing-text { 
-        font-size: .90rem;
-    }
-}
-
-/* Media Query for Mobile Screens */
-@media (max-width: 768px) {
-    #content-container {
-        max-width: 90%; /* Fit better on mobile */
-    }
-
-    .profile-image {
-        max-width: 280px;
-        max-height: 225px;
-    }
-
-    #title-text { 
-        font-size: 1rem;
-    }
-
-    .text-section span {
-        font-size: 1rem;
-    }
-
-    #landing-text { 
-        font-size: .90rem;
-    }
-}
-
-
 .line-top-left {
     position: absolute;
     top: 10px;
@@ -597,7 +552,7 @@ a.underline {
 
 /* Ensure the container uses flexbox */
 .form-icons {
-    margin-left: 9%;
+    margin-left: 7%;
     display: flex;
     justify-content: space-between; /* Center the icons horizontally */
     align-items: center; /* Center the icons vertically */
@@ -613,7 +568,6 @@ a.underline {
     height: 100px; /* Set a fixed height */
     object-fit: contain; /* Ensure the image fits within the dimensions */
     transition: transform 0.3s ease-in-out;
-    
 }
 
 /* Optional: Add hover effects */
