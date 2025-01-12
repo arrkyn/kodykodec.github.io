@@ -485,7 +485,6 @@ svg.light path {
     display: flex; /* Display labels as block elements, one below the other */
     margin-top: 3%;
     margin-left: 5%;
-   
 }
 
 /* Style the textboxes (input fields) */
@@ -500,7 +499,7 @@ svg.light path {
 }
 
 #name, #email, #message { 
-    width: 99%;
+    width: 95%;
 }
  
 
@@ -554,12 +553,13 @@ a.underline {
 /* Ensure the container uses flexbox */
 .form-icons {
     margin-left: 7%;
+    margin-right: 7%;
     display: flex;
     justify-content: space-between; /* Center the icons horizontally */
     align-items: center; /* Center the icons vertically */
     gap: 20px; /* Add spacing between the icons */
     position: relative; /* Allow icons to scale and move with the container */
-    width: 100%; /* Make the container take up full width */
+    width: 95%; /* Make the container take up full width */
     padding-bottom: 20px; /* Space from the bottom */
 }
 
