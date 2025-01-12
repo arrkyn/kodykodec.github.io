@@ -181,7 +181,7 @@ body {
 
 .header-about { 
     font-size: larger;
-    font-weight: bold;
+    
 }
 
 @keyframes flash {
@@ -423,7 +423,8 @@ svg.light path {
 
 
 .new-window-about {
-    font-family: 'Exo', sans-serif;
+    font-family: "Fredoka", serif;
+    font-optical-sizing: auto;
     font-size: 1.2rem;
     color:rgb(191, 214, 205);
     z-index: 1;
@@ -597,8 +598,8 @@ a.underline {
 .list-container {
     display: flex;
     justify-content: center; /* Center the list horizontally */
-    font-weight: bold;
-    font-display: ;
+   
+    font-display: larger;
 }
 
 ul {
