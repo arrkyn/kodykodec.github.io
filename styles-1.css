@@ -55,7 +55,7 @@ body {
 }
 
 .content-about { 
-    
+    line-height: 1.5;
 }
 
 .no-overflow {
@@ -181,8 +181,13 @@ body {
 }
 
 .header-about { 
+    text-align: center;
     font-size: larger;
     
+}
+
+.certs { 
+    font-weight: 600;
 }
 
 @keyframes flash {
@@ -288,11 +293,15 @@ body {
       inset: 0;
   }
 
+  .about-ext { 
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+
 
 #about {
     position: absolute;
     right: 65%;
-
     user-select: none;
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
@@ -381,17 +390,7 @@ svg.light path {
 }
 
 
-.portfolio-headers {
-    display: flex;
-    justify-content: center;
-    /* Center horizontally */
-    position: sticky;
-}
 
-.portfolio-headers a {
-    margin: 0 10px;
-    /* Adjust the spacing between links as needed */
-}
 
 /* Style the image */
 .img_3d {

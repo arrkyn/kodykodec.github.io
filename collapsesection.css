@@ -13,8 +13,11 @@ summary:hover {
 }
 
  .about-ext { 
-    text-align: justify;
+    line-height: 1.5; /* Adjust for better line spacing */
+    text-align: left;
     padding: 3%;
+    word-wrap: break-word; /* Helps prevent odd word-breaking behavior */
+    word-spacing: normal;  /* Ensures normal spacing between words */
  }
 
 /* Style for the main summary triangle (rightwards arrow) */
