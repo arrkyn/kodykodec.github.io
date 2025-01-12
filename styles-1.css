@@ -141,13 +141,14 @@ body {
 .text-section {
     font-family: "Open Sans", sans-serif;
     color:rgb(237, 255, 251);
+    font-size: larger;
     
 }
 
 #title-text { 
     margin-top: .5rem;
     font-family: "Nunito", sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 600;
     
   
@@ -463,7 +464,7 @@ svg.light path {
     position: absolute;
     top: 10%;
     right: -3%;
-    min-width: 300px; /* Ensures the form doesn't get too small */
+    min-width: 325px; /* Ensures the form doesn't get too small */
     max-width: 400px; /* Limits how wide the form can get */
     width: 100%; /* Allows it to fill the available width */
     color:rgb(191, 214, 205); /* To maintain consistent text color */

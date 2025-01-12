@@ -3,11 +3,11 @@ const contactBorder = document.getElementById('contact');
 const topLight = document.querySelector('.top-light');
 
 
+
 showContentContainer();
 
 document.querySelector('.top-light svg').addEventListener('click', function() {
   var fixedFrame = document.querySelector('.fixed-frame');
-
   var aboutIsOpen = fixedFrame.classList.contains('open-about');
   var contactIsOpen = fixedFrame.classList.contains('open-contact');
 

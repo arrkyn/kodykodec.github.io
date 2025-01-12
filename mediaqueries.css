@@ -30,15 +30,19 @@
     }
 
     #title-text { 
-        font-size: 1rem;
+        font-size: 1.5rem;
+    }
+
+    #title-text span { 
+        font-size: 1.2rem;
     }
 
     .text-section span {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     #landing-text { 
-        font-size: .90rem;
+        font-size: 1rem;
     }
 }
 
