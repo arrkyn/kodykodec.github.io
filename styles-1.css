@@ -199,6 +199,33 @@ body {
     }
 }
 
+u {
+    position: relative;
+    text-decoration: none; /* Remove default underline */
+    
+}
+
+u::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, rgb(149, 164, 162),rgb(149, 164, 162));
+    animation: underlineMove 3s linear infinite;
+    opacity: 0; /* Start invisible */
+}
+
+@keyframes underlineMove {
+    0% { width: 0; left: 0; opacity: 0; }
+    20% { opacity: 1; } /* Fade in */
+    50% { width: 100%; left: 0; opacity: 1; }
+    80% { opacity: 1; } /* Hold opacity */
+    100% { width: 0; left: 100%; opacity: 0; } /* Fade out */
+
+}
+
 .line-top-left {
     position: absolute;
     top: 10px;
