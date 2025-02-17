@@ -33,7 +33,6 @@ async function sendDataToGoogleSheets(data) {
             method: "POST",
             headers: {
                 "Accept": "application/vnd.github.everest-preview+json",
-                "Authorization": "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",
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
