@@ -9,13 +9,14 @@ const backButton = document.querySelector(".back-btn");
 const submitResultsButton = document.querySelector(".submit-results-btn");
 const assetContainer = document.querySelector(".asset-container");
 
+let getSelectedFile = document.querySelector("div.asset-container > div.highlight > img") ? document.querySelector("div.asset-container > div.highlight > img").id : ''
 const participantName = document.getElementById("user-name");
 const participantEmail = document.getElementById("user-email");
 const comments = document.getElementById("comments");
 const detailsEntered = false;
 
 // Variables to track choices and state
-const userChoices = []; // Stores choice history
+let userChoices = []; // Stores choice history
 const userPath = []; // Stores full decision path (e.g., "A1-2") for data tracking
 let userChoice = ''; // Tracks the latest choice
 let choiceNumber = 1; // Start from Group 1
@@ -26,38 +27,32 @@ const radioButtons = document.querySelectorAll('input[type="radio"]'); // All ra
 
 async function sendDataToGoogleSheets(data) {
     const githubActionURL = "https://api.github.com/repos/kodykodec/user-design-survey/dispatches";
-    
+    const gAppsUrl = "https://script.google.com/macros/s/AKfycbxCfX-wXlLs8erVhvujWAzVVBw3n6f5UPKgjwkI4L7dfXz7-J_cMuzdaGlL1Frpa8Ec/exec";
 
     try {
-        const response = await fetch(githubActionURL, {
+        let payload = JSON.stringify(data)
+        console.log("JSON: " + payload)
+        const response = await fetch(gAppsUrl, {
+            mode: "no-cors",
             method: "POST",
             headers: {
-                "Accept": "application/vnd.github.everest-preview+json",
                 "Content-Type": "application/json",
+                // "Access-Control-Allow-Origin": "*",
+                // "Origin": "127.0.0.1"
+                // "X-Frame-Options": "SAMEORIGIN"
             },
-            body: JSON.stringify({
-                event_type: "call_google_script",
-                client_payload: { data }
-            })
+            body: payload
         });
-        const result = await response.json();
-        console.log("Success:", result);
+        // const result = await response.json();
+        if (response && response.success === 'true') {
+            console.log("Success:", result);
+        }
+        
     } catch (error) {
         console.error("Error:", error);
     }
 }
 
-
-// Example usage
-const userData = () => {
-    return  {
-    time: getTime(),
-    name: participantName,
-    invitecode: '123',
-    finalchoice: userChoice,
-    comments: comments,
-};
-};
 
 // Custom date formatting function
 const getTime = () => {
@@ -69,6 +64,18 @@ const getTime = () => {
     const minutes = String(now.getMinutes()).padStart(2, '0');
     return `${year}-${month}-${day} ${hours}:${minutes}`;
 };
+
+// Example usage
+var userData = {
+    time: getTime(),
+    name: participantName,
+    email: participantEmail,
+    finalchoice: userChoice,
+    comments: comments,
+
+};
+
+
 
 /* window.addEventListener("load", () => {
     introSlide.classList.add("hide-choices");
@@ -92,6 +99,8 @@ startButton.addEventListener("click", () => {
         errorMessage.style.display = "none"; // Hide error if successful
         errorMessage.classList.remove("shake-error"); // Remove shake class if it was applied
         selectionSlide.classList.remove("hide-choices");
+        userData.name = participantName.value
+        userData.email = participantEmail.value
     } else {
         if (errorMessage.style.display === "block") {
             // If the error is already visible, add a "shake" effect
@@ -148,6 +157,10 @@ submitResultsButton.addEventListener("click", () => {
     selectionSlide.classList.add("hide-choices");
     finalSlide.classList.add("hide-choices");
     finalThanks.classList.remove("hide-choices");
+    userData.comments = comments.value
+    userData.finalchoice = userChoice
+    console.log(userData)
+    console.log(JSON.stringify(userData))
     sendDataToGoogleSheets(userData);
 });
 
@@ -159,12 +172,14 @@ toggleBackButton(choiceNumber);
 document.querySelector(".submit-btn").addEventListener("click", () => {
     // Check if any asset is highlighted (selected)
     const isAssetSelected = document.querySelector(".highlight") !== null;
-
+   
     if (isAssetSelected) {
         nextChoice(userChoice);  // You can pass the user choice as usual
     } else {
         alert("Please choose a selection first.");
     }
+     console.log(userData)
+    console.log(JSON.stringify(userData))
     resetSelection();
     toggleBackButton(choiceNumber);
 });
@@ -259,13 +274,25 @@ function presentNewChoices() {
 
 
 
+    const prefix = `/survey/res/`;
     setTimeout(() => {
         let nextSlide = choiceNumber; // Move to next group
         let choicePart;
 
 
+
+
+        let fileMap = {
+            group1 : ['A', 'B'],
+            group2 : ['A1', 'A2', 'B1', 'B2']
+            //..and so on
+        }
+
+        // key = src
+        choiceFileName = fileMap['group1'];
+
         if (nextSlide === 1) {
-            choiceA.src = `/survey/res/Group 1-A.png`;  
+            choiceA.src = prefix + 'Group 1-A.png';  
             choiceB.src = `/survey/res/Group 1-B.png`;
         } else if (nextSlide === 2) {
             console.log("if block slide 2 is called choicePart = ", choicePart);
@@ -338,8 +365,8 @@ function nextChoice(choice) {
 // Previous choice
 function prevChoice() {
     if (choiceNumber > 1) {
-        choiceNumber--; // Decrement first
-        userChoice = userChoices[choiceNumber - 1] || ''; // Ensure valid value
+        // choiceNumber--; // Decrement first
+        userChoice = userChoices.pop() || ''; // Ensure valid value
     }
 
     console.log("prevChoice after pop User Choices Log:", userChoices);
