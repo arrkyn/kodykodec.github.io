@@ -9,9 +9,8 @@ const backButton = document.querySelector(".back-btn");
 const submitResultsButton = document.querySelector(".submit-results-btn");
 const assetContainer = document.querySelector(".asset-container");
 
-let getSelectedFile = document.querySelector("div.asset-container > div.highlight > img") ? document.querySelector("div.asset-container > div.highlight > img").id : ''
 const participantName = document.getElementById("user-name");
-const participantEmail = document.getElementById("user-email");
+const inviteCode = document.getElementById("invite-code");
 const comments = document.getElementById("comments");
 const detailsEntered = false;
 
@@ -22,28 +21,23 @@ let userChoice = ''; // Tracks the latest choice
 let choiceNumber = 1; // Start from Group 1
 let totalSlides = 4;
 
-const radioButtons = document.querySelectorAll('input[type="radio"]'); // All radio buttons
+const radioButtons = document.querySelectorAll('input[type="radio"]'); 
 
 
 async function sendDataToGoogleSheets(data) {
-    const githubActionURL = "https://api.github.com/repos/kodykodec/user-design-survey/dispatches";
     const gAppsUrl = "https://script.google.com/macros/s/AKfycbxCfX-wXlLs8erVhvujWAzVVBw3n6f5UPKgjwkI4L7dfXz7-J_cMuzdaGlL1Frpa8Ec/exec";
 
     try {
-        let payload = JSON.stringify(data)
-        console.log("JSON: " + payload)
+        let payload = JSON.stringify(data);
         const response = await fetch(gAppsUrl, {
             mode: "no-cors",
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                // "Access-Control-Allow-Origin": "*",
-                // "Origin": "127.0.0.1"
-                // "X-Frame-Options": "SAMEORIGIN"
             },
             body: payload
         });
-        // const result = await response.json();
+        
         if (response && response.success === 'true') {
             console.log("Success:", result);
         }
@@ -54,29 +48,34 @@ async function sendDataToGoogleSheets(data) {
 }
 
 
-// Custom date formatting function
+// Custom date formatting with 12-hour format and AM/PM
 const getTime = () => {
     const now = new Date();
     const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-based
     const day = String(now.getDate()).padStart(2, '0');
-    const hours = String(now.getHours()).padStart(2, '0');
+
+    let hours = now.getHours();
     const minutes = String(now.getMinutes()).padStart(2, '0');
-    return `${year}-${month}-${day} ${hours}:${minutes}`;
+
+    // Convert to 12-hour format
+    const amPm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12; // Convert 0 (midnight) to 12
+
+    return `${month}-${day}-${year} ${hours}:${minutes} ${amPm}`;
 };
 
-// Example usage
-var userData = {
+const userData = {
     time: getTime(),
     name: participantName,
-    email: participantEmail,
+    invitecode: inviteCode,
     finalchoice: userChoice,
     comments: comments,
 
 };
 
 
-
+//stricly for testing 
 /* window.addEventListener("load", () => {
     introSlide.classList.add("hide-choices");
     selectionSlide.classList.add("hide-choices"); 
@@ -94,14 +93,25 @@ document.addEventListener("DOMContentLoaded", () => {
 const errorMessage = document.getElementById("error-message");
 
 startButton.addEventListener("click", () => {
-    if (isDetailsEntered()) {
+    const nameValid = participantName.value.trim() !== "";
+    const inviteCodeValid = validateCode(inviteCode.value.trim());
+
+    if (nameValid && inviteCodeValid) {
         introSlide.classList.add("hide-choices"); // Hide intro slide
         errorMessage.style.display = "none"; // Hide error if successful
         errorMessage.classList.remove("shake-error"); // Remove shake class if it was applied
         selectionSlide.classList.remove("hide-choices");
-        userData.name = participantName.value
-        userData.email = participantEmail.value
+
+        userData.name = participantName.value;
+        userData.invitecode = inviteCode.value;
     } else {
+        // Determine the error message dynamically
+        if (!nameValid) {
+            errorMessage.textContent = "Please enter a name to proceed.";
+        } else if (!inviteCodeValid) {
+            errorMessage.textContent = "Invite code can't exceed 6 digits. Numbers only.";
+        }
+
         if (errorMessage.style.display === "block") {
             // If the error is already visible, add a "shake" effect
             errorMessage.classList.add("shake-error");
@@ -117,38 +127,10 @@ startButton.addEventListener("click", () => {
     }
 });
 
-// Function to check if details are entered
-function isDetailsEntered() {
-    const nameValid = participantName.value.trim() !== "";
-    const emailValid = validateEmail(participantEmail.value.trim());
-
-    return nameValid && emailValid;
-}
-
-// Email validation function
-function validateEmail(email) {
-    const validDomains = [
-        // Generic Top-Level Domains (gTLDs)
-        "com", "org", "net", "info", "biz", "gov", "edu", "mil", "int", "coop", "museum", "name", "pro", "aero", "arpa", "post", "jobs", "cat", "tel", "travel",
-
-        // New gTLDs
-        "app", "tech", "blog", "shop", "xyz", "online", "site", "store", "website", "club", "vip", "design", "cloud", "space", "fun", "dev", "art", "solutions", "news", "media", "digital", "finance", "world", "guru", "live", "agency", "email", "business", "network", "company", "today", "social", "group", "marketing", "center", "support", "photography", "press", "events", "games", "bio", "law", "health", "cafe", "school", "chat", "services", "tools", "restaurant", "tech", "fashion", "video", "host", "science", "community", "band", "watch", "directory", "consulting", "review", "space", "security", "software", "ventures", "training", "partners", "careers", "legal", "eco", "fitness", "run", "charity", "love", "family", "church", "team",
-
-        // Comprehensive ccTLDs (Country-Code Domains)
-        "us", "ca", "mx", "br", "ar", "cl", "co", "pe", "ve", "uy", "py", "bo", "ec", "gt", "cr", "pa", "hn", "ni", "sv", "cu", "do", "jm",
-        "uk", "de", "fr", "es", "it", "nl", "se", "no", "fi", "dk", "be", "ch", "at", "pl", "ru", "ie", "pt", "cz", "gr", "hu", "sk", "ro", "bg", "ua", "si", "hr", "lt", "lv", "ee", "is", "lu", "mt", "li", "mc",
-        "za", "ng", "eg", "ke", "gh", "tz", "ma", "dz", "ly", "rw", "ug", "tn", "bw", "zm", "zw", "na", "mw", "cm", "sn", "et", "ml", "so",
-        "cn", "jp", "in", "kr", "sg", "hk", "tw", "id", "my", "th", "vn", "ph", "pk", "lk", "bd", "np", "mn", "la", "kh", "bt",
-        "au", "nz", "pg", "fj"
-    ];
-    const emailRegex = /^[^@]+@[^@]+\.(\w{2,})$/;
-
-    const match = email.match(emailRegex);
-    if (!match || !match[1]) return false; // Ensure match exists before accessing match[1]
-
-    const domain = match[1].toLowerCase(); // Extract domain extension
-    return validDomains.includes(domain); // Check if it's in the whitelist
-
+// Validate if the invite code is empty or less than 6
+function validateCode(code) {
+    if (code === "") return true; // Allow blank input
+    return /^\d{1,6}$/.test(code); // Allows 1 to 6 digits
 }
 
 
@@ -178,8 +160,6 @@ document.querySelector(".submit-btn").addEventListener("click", () => {
     } else {
         alert("Please choose a selection first.");
     }
-     console.log(userData)
-    console.log(JSON.stringify(userData))
     resetSelection();
     toggleBackButton(choiceNumber);
 });
@@ -190,6 +170,8 @@ document.querySelector(".back-btn").addEventListener("click", () => {
     resetSelection();
     toggleBackButton(choiceNumber);
 });
+
+
 
 
 
@@ -251,6 +233,8 @@ function highlightChoice(element) {
     }
 }
 
+
+
 // Present new choices dynamically
 function presentNewChoices() {
     console.log("presentNewChoices() called with userChoice:", userChoice); // Check if nextChoice is called
@@ -259,10 +243,8 @@ function presentNewChoices() {
     const finalChoice = document.getElementById("final-img"); // final choice image 
     const choicesContainer = document.querySelector(".asset-container");
 
-
     choicesContainer.classList.add("fade-out");
     choicesContainer.classList.add("hidden");
-
 
     setTimeout(() => {
         // Hide images before transition
@@ -272,27 +254,12 @@ function presentNewChoices() {
         submitButton.disabled = false; // Re-enable after transition
     }, 1000);
 
-
-
-    const prefix = `/survey/res/`;
     setTimeout(() => {
         let nextSlide = choiceNumber; // Move to next group
         let choicePart;
 
-
-
-
-        let fileMap = {
-            group1 : ['A', 'B'],
-            group2 : ['A1', 'A2', 'B1', 'B2']
-            //..and so on
-        }
-
-        // key = src
-        choiceFileName = fileMap['group1'];
-
         if (nextSlide === 1) {
-            choiceA.src = prefix + 'Group 1-A.png';  
+            choiceA.src = '/survey/res/Group 1-A.png';  
             choiceB.src = `/survey/res/Group 1-B.png`;
         } else if (nextSlide === 2) {
             console.log("if block slide 2 is called choicePart = ", choicePart);
@@ -322,7 +289,6 @@ function presentNewChoices() {
             // Ensure final slide elements are visible
             finalSlide.classList.remove("hidden");
             finalChoice.classList.add("highlight");
-
         }
 
         // Re-enable the submit button and radio buttons after fade-in effect
@@ -365,13 +331,15 @@ function nextChoice(choice) {
 // Previous choice
 function prevChoice() {
     if (choiceNumber > 1) {
-        // choiceNumber--; // Decrement first
-        userChoice = userChoices.pop() || ''; // Ensure valid value
+        choiceNumber--; // Decrement first
+        userChoice = userChoices[choiceNumber - 1] || ''; // Ensure valid value
     }
 
     console.log("prevChoice after pop User Choices Log:", userChoices);
     toggleBackButton(choiceNumber);
     presentNewChoices();
 }
+
+
 
 

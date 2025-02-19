@@ -1,17 +1,9 @@
 /* 🟢 Mobile Layout: Stack Choices on Top/Bottom */
 @media screen and (max-width: 500px) {
-    .asset-container {
-        flex-direction: column;
-        /* Stack choices vertically */
-        align-items: center;
-
-        margin: 0; /* Remove margin */
-        padding: 0; /* Remove padding */
-
-    }
+   
 
     body { 
-        font-size: larger;
+        font-size: 2rem;
     }
 
     .slide,
@@ -64,16 +56,7 @@ intro-slide {
         height: auto;
     }
 
-    .final-choice {
-        border: 2.5px solid rgb(0, 0, 0);
-    border-radius: 11px;
-    box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.4), -5px 0 5px -5px rgba(0, 0, 0, 0.3), 0 5px 5px -5px rgba(0, 0, 0, 0.7);
-        width: 100%;
-        height: 40vw; /* Adjust this to cut off more or less */
-        overflow: hidden; /* Hide the cropped part */
-        position: relative; /* Needed for absolute positioning */
-    }
-    
+
     .final-choice img {
         width: 100%;
         height: 100%; /* Force it to fill the container */
@@ -85,29 +68,7 @@ intro-slide {
        visibility: hidden;
     }
 
-    .submit-btn,
-    .back-btn {
-        margin-bottom: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-    }
 
-    .back-btn{ 
-        margin: 0; /* Remove margin */
-        padding: 0; /* Remove padding */
-        height: 35px;
-        width: 60px;
-        display: flex; /* Enable flexbox */
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        background: none; /* Remove default button background */
-        border: none; /* Remove default border */
-        padding: 0; /* Remove default padding */
-        cursor: pointer; /* Optional: Change cursor to pointer */
-    }
     .back-btn svg {
         width: 50px; /* Adjust SVG size if needed */
         height: 50px;
@@ -126,7 +87,8 @@ intro-slide {
         font-size: 1.33em;
     }
 
-    #user-name, #user-email { 
+    #user-name, #invite-code
+     { 
         width: 80%;
         height: 6vh;
     }
@@ -134,19 +96,17 @@ intro-slide {
         margin-bottom: 0;
     }
 
+    input { 
+        width: 80vw; /* Adjust the percentage of viewport width */
+        padding: 0.5vw; /* Add some padding for spacing */
+    }
+    
+
     input::placeholder {
         font-size: 16px; /* Adjust the size as needed */
         color: #999;    /* Optional: Change the color of the placeholder text */
     }
-    .start-btn { 
-        font-size: larger;
-        width: 30%;
-        padding: 10px;
-    }
-
-    .submit-btn { 
-        
-    }
+   
 
     .progress-bar { 
         height: 3vh;
@@ -167,6 +127,14 @@ intro-slide {
         padding: 5px;
         border-radius: 5px;;
     }
+
+    
+#user-name, #invite-code
+{ 
+   width: 50%;
+   height: 4.5vh;
+}
+
     
     /* Fade effect applied to the image */
     .final-choice img {
@@ -185,16 +153,20 @@ intro-slide {
     #comments{ 
         width: 95%;
         min-height: 10vh;
-        border: 1.5px solid black; /* Increases border thickness */
+        border: 2.5px solid black; /* Increases border thickness */
         padding: 8px; /* Adds spacing inside the textbox */
         outline: none; /* Removes default focus outline */
     }
 
-    .submit-btn { 
+    .submit-btn, .start-btn { 
         margin-bottom: 10px;
         font-size: larger;
+        width: auto; /* Allow button width to auto-adjust */
+    max-width: 100%; /* Ensure they don't stretch too much */
     }
-    
+
+
+
 }
 
 @media screen and (max-width: 573px) {
@@ -216,8 +188,14 @@ intro-slide {
     }
 
     .slide,
-intro-slide {
+.intro-slide {
     margin-top: -10px;
+}
+
+#user-name, #invite-code
+{ 
+   width: 80%;
+   height: 4.5vh;
 }
 
 #comments{ 
@@ -228,10 +206,6 @@ intro-slide {
     outline: none; /* Removes default focus outline */
 }
 
-#final-img { 
-    margin-bottom: 10px;
-}
-    
     .asset-a,
     .asset-b {
         width: 100%;
@@ -266,12 +240,8 @@ intro-slide {
     }
 
     .final-choice {
-        border: 2.5px solid rgb(0, 0, 0);
-    border-radius: 11px;
-    box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.4), -5px 0 5px -5px rgba(0, 0, 0, 0.3), 0 5px 5px -5px rgba(0, 0, 0, 0.7);
-        width: 100%;
         height: 40vw; /* Adjust this to cut off more or less */
-        overflow: hidden; /* Hide the cropped part */
+         /* Hide the cropped part */
         position: relative; /* Needed for absolute positioning */
     }
     
@@ -293,16 +263,6 @@ intro-slide {
        visibility: hidden;
     }
 
-    .submit-btn,
-    .back-btn {
-        margin-bottom: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-    }
-
     .back-btn{ 
         height: 35px;
         width: 60px;
@@ -314,13 +274,15 @@ intro-slide {
         padding: 0; /* Remove default padding */
         cursor: pointer; /* Optional: Change cursor to pointer */
     }
+
+  
     .back-btn svg {
         width: 50px; /* Adjust SVG size if needed */
         height: 50px;
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 2rem;
         /* Scale down heading */
         text-align: center;
     }

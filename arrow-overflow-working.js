@@ -1,39 +1,74 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var container = document.getElementById('content-container');
-    var indicator = document.getElementById('scroll-indicator');
-    var lastLine = document.querySelector('#landing-text p:last-child'); // Select the last line (Thanks for visiting!)
-    
-    // Create an intersection observer to track visibility of the last line
-    var observer = new IntersectionObserver(function (entries) {
+    const indicator = document.getElementById('scroll-indicator');
+    const surveyLink = document.querySelector('.survey-link'); // Selecting the survey link
+
+    // Helper function to hide the arrow when the survey link is visible
+    function hideArrowWhenSurveyLinkVisible(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Last line is visible, change arrow direction to up and hide arrow
+                // Survey link is visible, change arrow direction to up and hide arrow
                 indicator.innerHTML = '&#x25B2;'; // Up arrow (▲)
-                indicator.style.opacity = '0'; // Optionally hide the arrow when at the bottom
+                indicator.classList.add('hidden'); // Hide the arrow
             } else {
-                // Last line is not visible, show down arrow
+                // Survey link is not visible, change arrow direction to down and show arrow
                 indicator.innerHTML = '&#x25BC;'; // Down arrow (▼)
-                indicator.style.opacity = '1'; // Show arrow
+                indicator.classList.remove('hidden'); // Show the arrow
             }
         });
-    }, {
-        root: container, // Observe within the scrollable container
-        threshold: 1.0 // Fully visible when 100% of the element is in view
+    }
+
+    // Create an IntersectionObserver to track visibility of the survey link
+    const observer = new IntersectionObserver(hideArrowWhenSurveyLinkVisible, {
+        root: null, // Observe visibility in the viewport
+        threshold: 1.0 // Trigger when the entire survey link is in view
     });
 
-    // Observe the last line
-    observer.observe(lastLine);
+    // Start observing the survey link
+    observer.observe(surveyLink);
 
-    // Initial check if container has overflow
-    function checkOverflow() {
-        if (container.scrollHeight > container.clientHeight) {
-            indicator.classList.remove('hidden'); // Show arrow if overflow
-        } else {
-            indicator.classList.add('hidden'); // Hide arrow if no overflow
+    // Function to check if it's a mobile screen
+    function isMobile() {
+        return window.innerWidth <= 768; // Consider 768px or lower as mobile
+    }
+
+    // Function to check if the user has reached the bottom of the page
+    function checkScrollPosition() {
+        if (isMobile()) {
+            // Check if the user is at the bottom of the page
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const pageHeight = document.documentElement.scrollHeight;
+
+            if (scrollPosition >= pageHeight) {
+                indicator.innerHTML = '&#x25BC;';
+                indicator.style.opacity = '1';  // Make sure it's visible
+            } else {
+                indicator.innerHTML = '&#x25BC;';
+                indicator.style.opacity = '1';  // Show arrow
+            }
         }
     }
 
-    // Run checkOverflow on load and resize
-    window.addEventListener('load', checkOverflow);
-    window.addEventListener('resize', checkOverflow);
+    // Event listener for scroll events
+    window.addEventListener('scroll', checkScrollPosition);
+
+    // Initial check for scroll position when the page is loaded
+    checkScrollPosition();
+
+    // Function to show the arrow when needed
+    function showArrow() {
+        if (isMobile()) {
+            indicator.classList.remove('hidden'); // Show the arrow on mobile
+        } else {
+            indicator.classList.add('hidden'); // Hide the arrow on non-mobile screens
+        }
+    }
+
+    // Event listener for window resize to handle screen size changes
+    window.addEventListener('resize', function () {
+        showArrow();
+        checkScrollPosition(); // Check scroll position again on resize
+    });
+
+    // Initial check when the page loads
+    showArrow();
 });
